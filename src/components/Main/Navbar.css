@@ -1,0 +1,165 @@
+  .Navbar {
+    width: 75%;
+    background-color: rgba(29, 29, 102, 0.4);
+    height: 24%;
+    border-radius: 0 4px 4px 4px;
+  }
+
+  .TabActive{
+    background-color: rgba(29, 29, 102, 0.4);
+    border: none;
+    position: relative;
+    top: -26px;
+  }
+
+  .Tab {
+    background-color: rgba(142, 142, 158, 0.4);
+    position: relative;
+    top: -26px;
+    border: none;
+  }
+
+  .TabActive, .Tab{
+    width: 130px;
+    color: white;
+    border-radius: 4px 14px 0 0;
+  }
+
+  .ContentTab1 {
+    display: block;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .ContentTab2 {
+    display: none;
+  }
+
+  #NavInput{
+    height: 40px;
+    border-radius: 3px;
+  }
+
+  .SelectDestination {
+    width: 150px;
+  }
+
+  .SelectDeparture{
+    width: 110px;
+  }
+
+  .NavDate{
+  width: 85px;
+  font-size: 12px;
+  font-weight: bold;
+  height: 30px;
+  background-color: rgb(236, 231, 231);
+  border: none;
+  text-align: center;
+  color: gray;
+  }
+  
+  .DivForNavDate{
+    display: flex;
+    height: 39px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    background-color: white;
+    border-radius: 3px;
+  }
+
+  .SelectDuration{
+    width: 120px;
+  }
+
+  .SelectTouristsNumber{
+    width: 120px;
+  }
+
+  .SearchingTour{
+    width: 120px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: rgb(107, 182, 107);
+    border: none;
+    color: white;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+  }
+
+  .NavText{
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 1150px) {
+  .Navbar {
+    height: 33%;
+  }
+
+  .ContentTab1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
+    flex-wrap: wrap;
+    height: 86%;
+  }
+
+  .DivForInput{
+    width: 40%;
+  }
+
+  .NavText{
+    display: none;
+  }
+
+  #NavInput{
+    width: 100%;
+  }
+
+  .SearchingTour{
+    width: 39.8%;
+  }
+
+  .DivForNavDate{
+    width: 99.44%;
+    margin-left: 1px;
+  }
+
+  .NavDate{
+    width: 40%;
+  }
+}
+
+@media (max-width: 640px){
+  .Navbar {
+    width: 60%;
+    height: 50%;
+  }
+
+  .DivForInput{
+    width: 92%;
+  }
+
+  .SearchingTour{
+    width: 92%;
+  }
+}
+
+@media (max-width: 450px){
+  .Navbar {
+    height: 58%;
+  }
+}
+
+
+
+
+  
+
+  
+  

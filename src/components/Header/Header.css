@@ -1,0 +1,69 @@
+
+header {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(18, 18, 120);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 1;
+    min-width: 340px;
+}
+
+.AgencyNameDiv {
+    width: 20%;
+    color: white;
+    display: flex;
+    justify-content: right;
+    margin-right: 70px;
+}
+
+.Emblem {
+    width: 100px;
+    height: 100%;
+}
+
+.DivForBtnRequest {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    align-self: center;
+}
+
+.BtnRequest {
+    width: auto;
+    height: 60%;
+    color: white;
+    background-color: rgba(225, 93, 53, 0.932);
+    border: none;
+    border-radius: 3px;
+}
+
+.BtnRequest:hover {
+    background-color: rgba(254, 95, 50, 0.932);
+} 
+
+@media (max-width: 640px){
+    .DivForBtnRequest{
+        display: none;
+    }
+
+    .AgencyNameDiv{
+        width: auto;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 540px){
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .AgencyNameDiv{
+        display: none;
+    }
+}
+
