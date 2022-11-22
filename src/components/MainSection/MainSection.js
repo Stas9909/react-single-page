@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainSection.css";
+import ToursTemplateSection from "./ToursTemplateSection/ToursTemplateSection";
 import LogoTurkue from "../../Assets/Курорт-Олюдениз.jpg";
 import LogoEgypt from "../../Assets/shutterstock_114130168.jpg";
 import LogoOAE from "../../Assets/Dubaj.jpg";
@@ -11,15 +12,33 @@ import LogoItaly from "../../Assets/kuda-poehat-v-italy.jpg";
 import LogoCroatia from "../../Assets/Croatiajpg.jpg";
 
 const MainSection = () => {
+
+  const toursTemplate = [
+    {id: "LogoTurkue", pict: LogoTurkue, resort: "Туреччина"},
+    {id: "LogoEgypt", pict: LogoEgypt, resort: "Єгипет"},
+    {id: "LogoOAE", pict: LogoOAE, resort: "ОАЕ"},
+    {id: "LogoDom", pict: LogoDom, resort: "Домінікана"},
+    {id: "LogoGreece", pict: LogoGreece, resort: "Греція"},
+    {id: "LogoMexico", pict: LogoMexico, resort: "Мексика"},
+    {id: "LogoMontenegro", pict: LogoMontenegro, resort: "Чорногорія"},
+    {id: "LogoItaly", pict: LogoItaly, resort: "Італія"},
+    {id: "LogoCroatia", pict: LogoCroatia, resort: "Хорватія"},
+  ]
+
+  const toursTemplateElements = toursTemplate.map(tour => <ToursTemplateSection id={tour.id} pict={tour.pict} resort={tour.resort}/>)
+
     return(
       <section className="MainSection">
+        <img src="./Assets/shutterstock_114130168.jpg" alt="" />
         <div className="Container">
           <div className="DivForH2">
             <h2 className="Header">ПОПУЛЯРНІ <span>НАПРЯМКИ</span></h2>
           </div>
           <div className="DivForSectionList">
 
-            <a className="ref2" href="#">
+          {toursTemplateElements}
+
+              {/* <a className="ref2" href="#">
               <div className="PopDestination">
                 <div className="DivForLogo">
                   <img className="logo" id="LogoTurkue" src={LogoTurkue} alt=''/>
@@ -47,7 +66,7 @@ const MainSection = () => {
                   <img className="logo" id="LogoOAE" src={LogoOAE} alt=''/>
                 </div>
                 <div className="DivForPar">
-                  <p className="ResortName">Домінікана</p>
+                  <p className="ResortName">ОАЕ</p>
                 </div>
               </div>
             </a>
@@ -58,7 +77,7 @@ const MainSection = () => {
                   <img className="logo" id="LogoDom" src={LogoDom} alt=''/>
                 </div>
                 <div className="DivForPar">
-                  <p className="ResortName">ОАЕ</p>
+                  <p className="ResortName">Домінікана</p>
                 </div>
               </div>
             </a>
@@ -116,7 +135,7 @@ const MainSection = () => {
                   <p className="ResortName">Хорватія</p>
                 </div>
               </div>
-            </a>
+            </a> */}
 
           </div>
           <div className="divForInput">

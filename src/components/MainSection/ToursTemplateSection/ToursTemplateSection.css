@@ -1,0 +1,123 @@
+
+.MainSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 248, 248);
+    min-width: 340px;
+}
+
+.Container {
+    width: 80%;
+}
+
+.DivForH2 {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 40px;
+}
+
+.Header {
+    color: #677b8e;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.DivForSectionList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.PopDestination{
+    width: 350px;
+    height: 240px;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.divForInput{
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.InputForMoreProp{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #677b8e;
+    color: rgba(102, 107, 152, 0.791);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.DivForLogo{
+    border-radius: 15px 15px 0 0;
+    height: 70%;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.DivForPar{
+    display: flex;
+    flex-direction: column;
+    margin: 17px;
+}
+
+.ResortName{
+    color: rgba(102, 107, 152, 0.791);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo:hover {
+    opacity: 0.4; 
+} 
+
+.DivForLogo:hover {
+    background: rgba(0,0,0)
+}
+
+.PopDestination:hover {
+    padding: 3px;  
+}
+
+.InputForMoreProp:hover{
+    background-color: rgb(107, 182, 107);
+    border: none;
+    color: white;
+}
+
+.ref2{
+    text-decoration: none;
+}
+
+@media (max-width: 460px) {
+    .DivForSectionList{
+        width: 80%;
+    }
+
+    .Container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .PopDestination{
+        width: 80%;
+        width: auto;
+        border-radius: 15px;
+        margin-top: 0;
+    }
+}

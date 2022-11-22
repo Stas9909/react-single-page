@@ -8,12 +8,20 @@ import {Container, NavLink} from 'react-bootstrap';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import FeedbackSection from './components/FeedbackSection/FeedbackSection';
 
+// import LogoOAE from "../../Assets/Dubaj.jpg";
+// import LogoDom from "../../Assets/Dominicana.jpg";
+// import LogoGreece from "../../Assets/Greece.jpg";
+// import LogoMexico from "../../Assets/mexico-cancun-big2.jpg";
+// import LogoMontenegro from "../../Assets/chernogoriya-v-maye.jpg";
+// import LogoItaly from "../../Assets/kuda-poehat-v-italy.jpg";
+// import LogoCroatia from "../../Assets/Croatiajpg.jpg";
+
 // import Navbar from "./Navbar";
 
 
 function App() {
 
-  // const registrationBlock = ({PopupField: true}) 
+    // const registrationBlock = ({PopupField: true}) 
 
   return (
     <BrowserRouter>
