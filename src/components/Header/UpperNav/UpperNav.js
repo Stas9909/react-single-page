@@ -1,15 +1,16 @@
 import React from "react";
 import "./UpperNav.css";
+import {NavLink} from "react-router-dom";
 
 const UpperNav = () => {
     return (
         <nav className="UpperNav">
-            <ul className="NavUl">
-                <li className="Navli"><a className="Ref" href="#">пошук тура</a></li> 
-                <li className="Navli"><a className="Ref" href="#">країни</a></li> 
-                <li className="Navli"><a className="Ref" href="#">послуги</a></li> 
-                <li className="Navli"><a className="Ref" href="#">о нас</a></li>       
-            </ul>
+            <div className="NavUl">
+                <li className="Navli"><NavLink to='/searching' className="Ref">пошук тура</NavLink></li> 
+                <li className="Navli"><NavLink to='/countries' className="Ref">країни</NavLink></li> 
+                <li className="Navli"><NavLink to='/services' className="Ref">послуги</NavLink></li> 
+                <li className="Navli"><NavLink to='/about' className="Ref">о нас</NavLink></li>     
+            </div>
         </nav>
     )
 }

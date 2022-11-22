@@ -34,7 +34,6 @@ span {
 }
 
 .PopDestination{
-    /* padding: 5px; */
     width: 350px;
     height: 240px;
     background-color: white;
@@ -120,14 +119,5 @@ span {
         width: auto;
         border-radius: 15px;
         margin-top: 0;
-        /* display: flex;
-        flex-direction: column;
-        align-items: center; */
     }
-
-    /* .SBC,   
-    .SBB{
-        width: 250px;
-    } */
-
 }

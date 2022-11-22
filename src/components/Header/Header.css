@@ -1,4 +1,3 @@
-
 header {
     height: 40px;
     width: 100%;
@@ -25,6 +24,45 @@ header {
     height: 100%;
 }
 
+
+.DivForRegIcon{
+    height: 23px;
+    width: 23px;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    background-color: #eff4f8;
+    border-radius: 50%;
+}
+
+.regIcon{
+    width: 23px;
+    height: 23px;
+}
+
+[data-tooltip] {
+    position: relative; 
+   }
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute; 
+    width: 60px;
+    left: 0; top: 0;
+    background: #3989c9;
+    color: #fff; 
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: 1s;
+} 
+
+[data-tooltip]:hover::after {
+    opacity: 1; 
+    top: 2em;
+}
+
 .DivForBtnRequest {
     display: flex;
     align-items: center;
@@ -44,6 +82,40 @@ header {
 .BtnRequest:hover {
     background-color: rgba(254, 95, 50, 0.932);
 } 
+
+.PopupField{
+    width: 300px;
+    height: 150px;
+    background-color: cornflowerblue;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    transform: translate(0, 0);
+    transition: all linear 0.3s;
+}
+
+.RegField{
+    transform: translate(100%, 0);
+}
+
+/* .PopupField{
+    width: 300px;
+    height: 150px;
+    background-color: cornflowerblue;
+    position: absolute;
+    top: 42px;
+    right: 0;  
+    transform: translate(100%, 0);
+    transition: all linear 0.3s;
+}
+
+.RegField{
+    transform: translate(0, 0);
+} */
+
+
+
+
 
 @media (max-width: 640px){
     .DivForBtnRequest{

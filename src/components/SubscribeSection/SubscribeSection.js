@@ -47,7 +47,7 @@ const SubscribeSection = () => {
                                 <input type="text" 
                                        className="FirstInput"
                                        placeholder="Ваше ім'я"/>
-                                <input type="number" 
+                                <input type="email" 
                                        className="SecondInput"
                                        placeholder="Ваш e-mail"/>
                                 <input className="MailBtn" type="button" value="ПІДПИСАТИСЯ"/>

@@ -4,22 +4,39 @@ import Footer from './components/Footer/Footer';
 import Main from './components/Main/Main';
 import MainSection from './components/MainSection/MainSection';
 import SubscribeSection from './components/SubscribeSection/SubscribeSection';
-import {Container} from 'react-bootstrap';
+import {Container, NavLink} from 'react-bootstrap';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import FeedbackSection from './components/FeedbackSection/FeedbackSection';
 
-let state = {
-  key1: "value1",
-  key2: "value2"
-}
+// import Navbar from "./Navbar";
+
 
 function App() {
+
+  // const registrationBlock = ({PopupField: true}) 
+
   return (
-    <div className='app'>
-      <Header state={state}/>
-      <Main/>
-      <MainSection/>
-      <SubscribeSection/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <div className='app'>
+        {/* <Header registrationBlock={registrationBlock}/> */}
+        <Header RegField/>
+        <Header/>
+        <Main/>
+        {/* <Routes>
+            <Route path="/searching" element={
+            <>
+            <MainSection/>
+            <FeedbackSection/>
+            </>
+          }
+        />          
+        </Routes> */}
+        <MainSection/>
+        <FeedbackSection/>
+        <SubscribeSection/>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   )
 }
 
