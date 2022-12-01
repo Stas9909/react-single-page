@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-single-page/static/css/main.e07f35b3.css",
-    "main.js": "/react-single-page/static/js/main.a7294f78.js",
+    "main.css": "/react-single-page/static/css/main.d3138cc1.css",
+    "main.js": "/react-single-page/static/js/main.897318dd.js",
     "static/media/Курорт-Олюдениз.jpg": "/react-single-page/static/media/Курорт-Олюдениз.6b766bc2a7dc41fe51d2.jpg",
     "static/media/chernogoriya-v-maye.jpg": "/react-single-page/static/media/chernogoriya-v-maye.e377638b18c61bdca98f.jpg",
     "static/media/shutterstock_114130168.jpg": "/react-single-page/static/media/shutterstock_114130168.11ffeea17ea8630e82b7.jpg",
@@ -12,17 +12,20 @@
     "static/media/Croatiajpg.jpg": "/react-single-page/static/media/Croatiajpg.2343bbbfaa45acf82441.jpg",
     "static/media/Dominicana.jpg": "/react-single-page/static/media/Dominicana.c572b6c78f44bde9cc93.jpg",
     "static/media/Greece.jpg": "/react-single-page/static/media/Greece.c0dcbb59bf0f7454fef6.jpg",
+    "static/media/Liberty lykia.jpg": "/react-single-page/static/media/Liberty lykia.27c8520f90ab1cf994ed.jpg",
     "static/media/kuda-poehat-v-italy.jpg": "/react-single-page/static/media/kuda-poehat-v-italy.733fc2c9677ffac43c26.jpg",
     "static/media/2111463.png": "/react-single-page/static/media/2111463.e719d8b29f452a16302d.png",
+    "static/media/sprite_v2_8.png": "/react-single-page/static/media/sprite_v2_8.a50cd3151005cd42249c.png",
     "static/media/footer-bg.jpg": "/react-single-page/static/media/footer-bg.3229359ab2549a11ef83.jpg",
+    "static/media/man-avatar.webp": "/react-single-page/static/media/man-avatar.4e3f4080aea8835684b1.webp",
     "static/media/3938026.png": "/react-single-page/static/media/3938026.bc069a2b5e1ecdb5e06e.png",
     "static/media/Tourist3.jpg": "/react-single-page/static/media/Tourist3.36b88d0a44eea72f42f9.jpg",
     "index.html": "/react-single-page/index.html",
-    "main.e07f35b3.css.map": "/react-single-page/static/css/main.e07f35b3.css.map",
-    "main.a7294f78.js.map": "/react-single-page/static/js/main.a7294f78.js.map"
+    "main.d3138cc1.css.map": "/react-single-page/static/css/main.d3138cc1.css.map",
+    "main.897318dd.js.map": "/react-single-page/static/js/main.897318dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.e07f35b3.css",
-    "static/js/main.a7294f78.js"
+    "static/css/main.d3138cc1.css",
+    "static/js/main.897318dd.js"
   ]
 }
