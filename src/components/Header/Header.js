@@ -44,7 +44,27 @@ import React, { useState } from 'react';
           <input className="BtnRequest" type="button" value="відправити запит"/>
         </div>
 
-        <div className={showPopup ? 'PopupField' : 'RegField'}></div>
+        <div className={showPopup ? 'PopupField' : 'RegField'}>
+          <form class="articleForm">
+            <div className="DivForIdent">
+              <label className="Label" for="userLogin">Ім'я користувача або e-mail</label>
+              <input id="userLogin" className="formInput" type="text" name="log"/>
+            </div>
+            <div class="form-group">
+              <label className="Label" for="userPass">Пароль</label>
+              <input id="userPass" className="formInput" type="text" name="pass"/>
+            </div>
+            <div className="loginRemember">
+              <label className="Label">
+                <input type="checkbox" name="rememberme" id="rememberme" value="forever"/>
+                Запам'ятати мене
+              </label>
+            </div>
+            <div className="loginSubmit">
+              <input id="submit" className="submitInput" type="submit" value="Увійти"/>
+            </div>
+          </form>
+        </div>
         {/* <div className='PopupField'></div> */}
       </header>
     )

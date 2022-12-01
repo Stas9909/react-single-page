@@ -1,0 +1,19 @@
+
+  .CountriesSection{
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    min-width: 340px;
+  }
+
+  .wrapForRoutes{
+    width: 47%;
+  }
+
+  @media (max-width: 680px){
+    .wrapForRoutes{
+      width: 65%;
+    }
+  }
+
+

@@ -1,0 +1,174 @@
+.TurkeyHotelsSection{
+    width: 100%;
+    /* background-color: cadetblue; */
+}
+
+.TurkeyNavWrap{
+    margin-top: 75px;
+}
+
+.TurkeyHtlsBlock{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    border-bottom: 1px dashed lightgray;
+    align-items: center;
+}
+
+.DivForHotelImg{
+    height: 130px;
+    width: 180px;
+    overflow: hidden;
+}
+
+.DivForDescriptions{
+    height: 130px;
+    width: 50%;
+    margin-left: 20px;
+}
+
+.GeneralImgName{
+    width: 100%;
+    height: 100%;
+}
+
+.GeneralImgName:hover{
+    width: 110%;
+    height: 110%;
+    transition: all linear 0.3s;
+}
+
+.ParForHotelName{
+    color: #5d7d94;
+    font-size: 16px;
+}
+
+.ParForRegion,
+.ParForCategory{
+    color: #5d7d94;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.RefForHotelName{
+    text-decoration: none;
+}
+
+.ParForHotelName:hover{
+    color: #f76c29;
+}
+
+.DivForIcons{
+    width: 160px;
+    height: 130px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.DivForHolidayType{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    scale: 1;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+#firstTypeIcon{
+    margin: -6845px 0px 0px -133px; 
+    
+}
+
+#secondTypeIcon{
+    margin: -7092px 0px 0px -133px;
+}
+
+#thirdTypeIcon{
+    margin: -7176px 0px 0px -133px;
+}
+
+#fourthTypeIcon{
+    margin: -6804px 0px 0px -131px;
+}
+
+[data-tooltips] {
+    position: relative; 
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute; 
+    width: 180px;
+    margin-top: 6px;
+    left: 23px;
+    background: #3989c9;
+    color: #fff; 
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: 1s;
+    text-align: center;
+} 
+
+[data-tooltips]:hover::after {
+    width: auto;
+    font-size: 12px;
+}
+
+@media (max-width: 1050px){
+    .DivForIcons{
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1020px){
+    .DivForIcons{
+        display: none;
+    }
+}
+
+@media (max-width: 680px){
+    /* .TurkeyHotelsSection{
+        width: 65%;
+    } */
+}
+
+@media (max-width: 480px){
+    .TurkeyHtlsBlock{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .DivForHotelImg{
+        height: 150px;
+        width: 100%;
+    }
+
+    .TurkeyHtlsBlock{
+        width: 100%;
+        height: auto;
+    }
+
+    .TurkeyHotelsSection{
+        width: 100%;
+    }
+
+    .DivForDescriptions{
+        height: 130px;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .RefForHotelName,
+    .ParForCategory,
+    .ParForRegion{
+        text-align: center
+    }
+}

@@ -5,47 +5,44 @@ import Main from './components/Main/Main';
 import MainSection from './components/MainSection/MainSection';
 import SubscribeSection from './components/SubscribeSection/SubscribeSection';
 import {Container, NavLink} from 'react-bootstrap';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import FeedbackSection from './components/FeedbackSection/FeedbackSection';
+import CountriesSection from "./components/Main/CountriesSection/CountriesSection";
+import TurkeyHotelsSection from "./components/Main/CountriesSection/TurkeyHotelsSection/TurkeyHotelsSection";
+import EgyptHotelsSection from "./components/Main/CountriesSection/EgyptHotelsSection/EgyptHotelsSection";
+import OAEHotelsSection from "./components/Main/CountriesSection/OAEHotelsSection/OAEHotelsSection";
 
-// import LogoOAE from "../../Assets/Dubaj.jpg";
-// import LogoDom from "../../Assets/Dominicana.jpg";
-// import LogoGreece from "../../Assets/Greece.jpg";
-// import LogoMexico from "../../Assets/mexico-cancun-big2.jpg";
-// import LogoMontenegro from "../../Assets/chernogoriya-v-maye.jpg";
-// import LogoItaly from "../../Assets/kuda-poehat-v-italy.jpg";
-// import LogoCroatia from "../../Assets/Croatiajpg.jpg";
-
-// import Navbar from "./Navbar";
-
-
-function App() {
-
-    // const registrationBlock = ({PopupField: true}) 
-
+function App(props) {
   return (
-    <BrowserRouter>
       <div className='app'>
-        {/* <Header registrationBlock={registrationBlock}/> */}
-        <Header RegField/>
         <Header/>
-        <Main/>
-        {/* <Routes>
-            <Route path="/searching" element={
+        <Routes>
+          <Route path="/" element={
             <>
-            <MainSection/>
-            <FeedbackSection/>
+              <Main/>
+              <MainSection/>
+              <FeedbackSection 
+                  FeedbackDataState={props.appDataState.feedbackVar.FeedbackTemplate}
+                  dispatch={props.dispatch}
+              />
             </>
-          }
-        />          
-        </Routes> */}
-        <MainSection/>
-        <FeedbackSection/>
+          }/>
+          <Route path="countries/" element={<CountriesSection/>}>
+            <Route path="turkey/" element={<TurkeyHotelsSection/>}/>
+            <Route path="egypt/" element={<EgyptHotelsSection/>}/> 
+            <Route path="OAE/" element={<OAEHotelsSection/>}/>     
+          </Route>
+        </Routes>
         <SubscribeSection/>
         <Footer/>
       </div>
-    </BrowserRouter>
   )
 }
 
 export default App;
+
+
+
+
+
+

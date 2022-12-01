@@ -90,6 +90,10 @@
     justify-content: center;
   }
 
+  .SearchingTour:hover{
+    background-color: rgb(65, 142, 65);;
+  }
+
   .NavText{
     color: white;
     padding: 0;

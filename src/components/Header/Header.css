@@ -47,7 +47,7 @@ header {
 [data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute; 
-    width: 60px;
+    width: auto;
     left: 0; top: 0;
     background: #3989c9;
     color: #fff; 
@@ -74,7 +74,7 @@ header {
     width: auto;
     height: 60%;
     color: white;
-    background-color: rgba(225, 93, 53, 0.932);
+    background-color: #f76c29;
     border: none;
     border-radius: 3px;
 }
@@ -85,17 +85,27 @@ header {
 
 .PopupField{
     width: 300px;
-    height: 150px;
-    background-color: cornflowerblue;
+    height: auto;
+    padding: 10px;
     position: absolute;
     top: 42px;
     right: 0;
     transform: translate(0, 0);
     transition: all linear 0.3s;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px #4f92d0;
+    background-color: rgba(90, 90, 154, 0.501);
+    /* background-color: -moz-radial-gradient(center, ellipse cover, #6195ed, #ffcfcf);
+    background-color: -webkit-linear-gradient(top, #6195ed, #ffcfcf);
+    background-color: -o-linear-gradient(top, #6195ed, #ffcfcf);
+    background-color: -ms-linear-gradient(top, #6195ed, #ffcfcf); */
 }
 
 .RegField{
     transform: translate(100%, 0);
+    position: absolute;
+    top: 42px;
+    right: 0;
 }
 
 /* .PopupField{
@@ -112,6 +122,28 @@ header {
 .RegField{
     transform: translate(0, 0);
 } */
+
+.Label{
+    color: powderblue;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.formInput{
+    width: 100%;
+}
+
+.submitInput{
+    width: 100%;
+    background-color: #f76c29;
+    border-radius: 3px;
+    border: 1px solid #f76c29;
+    color: white;
+}
+
+.submitInput:hover {
+    background-color: rgba(254, 95, 50, 0.932);
+} 
 
 
 

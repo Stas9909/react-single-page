@@ -216,10 +216,11 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        margin-left: 12px;
     }
 
     .divForParTxt{   
-        width: 30%;
+        width: 34%;
         display: flex;
         justify-content: flex-start;
         margin-left: -20px;
@@ -275,6 +276,10 @@
         align-self: center;
         flex-direction: column;
         height: 50%;
+    }
+
+    .DivForSubscr{
+        margin-right: 13px;
     }
 
     .innerBotSubSec{

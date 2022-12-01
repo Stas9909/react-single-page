@@ -1,0 +1,115 @@
+.FacebookReviewDiv{
+    width: 550px;
+    height: 150px;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.DivForAva {
+    width: 19%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tourist1,
+.tourist2,
+.tourist3,
+.tourist4{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.DivForLogoFB {
+    width: 19%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.FBLogo{
+    width: 18px;
+    height: 18px;
+}
+
+.DivForFeedback{
+    width: 81%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.wrap{
+    margin-top: 15px;
+    height: 80%;
+    overflow: hidden;
+}
+
+.DivForRef{
+    line-height: 0;
+}
+
+.ParForFeedback{
+    margin-right: 10px;
+    height: 75%;
+    font-size: 20px;  
+    line-height: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: left;
+    color: #677b8e;
+}
+
+.DivForDate{
+    width: 81%;
+    height: 30px;
+}
+
+.RefForFeedback{
+    text-decoration: none;
+    color: lightblue;
+}
+
+.DivForDate{
+    display: flex;
+    align-items: flex-start;
+}
+
+.ParForDate{
+    font-size: 12px;
+    color: lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 460px) {
+    .DivForAva,
+    .DivForLogoFB{
+        display: none;
+    }
+
+    .DivForFeedback{
+        width: 100%;
+    }
+
+    .ParForFeedback{
+        /* width: 95%; */
+        font-size: 15px;
+        -webkit-line-clamp: 4;
+    }
+
+    .FacebookReviewDiv{
+        width: 300px;
+    }
+}
