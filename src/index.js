@@ -6,14 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter} from "react-router-dom";
 import store from './Redux/redux-store';
 
+import {Provider} from "./StoreContext";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderDOM = (dataState) => {
+let rerenderDOM = () => {
   root.render(
     <BrowserRouter>
-      <React.StrictMode>
-        <App appDataState={dataState} store={store} dispatch={store.dispatch}/>
-     </React.StrictMode>
+      <Provider store={store}>
+        <App />
+     </Provider>
     </BrowserRouter>
   );
 }

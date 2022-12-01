@@ -12,7 +12,9 @@ import TurkeyHotelsSection from "./components/Main/CountriesSection/TurkeyHotels
 import EgyptHotelsSection from "./components/Main/CountriesSection/EgyptHotelsSection/EgyptHotelsSection";
 import OAEHotelsSection from "./components/Main/CountriesSection/OAEHotelsSection/OAEHotelsSection";
 
-function App(props) {
+import FeedbackSectionContainer from "./components/FeedbackSection/FeedbackSectionContainer";
+
+function App() {
   return (
       <div className='app'>
         <Header/>
@@ -21,10 +23,7 @@ function App(props) {
             <>
               <Main/>
               <MainSection/>
-              <FeedbackSection 
-                  FeedbackDataState={props.appDataState.feedbackVar.FeedbackTemplate}
-                  dispatch={props.dispatch}
-              />
+              <FeedbackSectionContainer/>
             </>
           }/>
           <Route path="countries/" element={<CountriesSection/>}>
