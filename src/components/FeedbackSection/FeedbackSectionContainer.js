@@ -20,9 +20,9 @@ const FeedbackSectionContainer = () => {
                     }
 
                     return(
-                        <FeedbackSection updateNewFeedback = {updateNewFeedback}
-                                         addFeedback = {addFeedback}
-                                         FeedbackTemplate = {state.FeedbackTemplate}
+                        <FeedbackSection updateNewFeedbackVarible = {updateNewFeedback}
+                                         addFeedbackVarible = {addFeedback}
+                                         FeedbackState= {state.FeedbackTemplate}
                                          NewFeedbackText = {state.NewFeedbackText}/>
                     )
                 }

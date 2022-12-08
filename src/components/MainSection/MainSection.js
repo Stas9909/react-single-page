@@ -11,7 +11,21 @@ import LogoMontenegro from "../../Assets/chernogoriya-v-maye.jpg";
 import LogoItaly from "../../Assets/kuda-poehat-v-italy.jpg";
 import LogoCroatia from "../../Assets/Croatiajpg.jpg";
 
-const MainSection = () => {
+const MainSection = (props) => {
+  
+  // if (props.toursTemplate.length === 0){
+  //   props.setCountries([
+  //   {id: "LogoTurkue", pict: LogoTurkue, resort: "Туреччина"},
+  //   {id: "LogoEgypt", pict: LogoEgypt, resort: "Єгипет"},
+  //   {id: "LogoOAE", pict: LogoOAE, resort: "ОАЕ"},
+  //   {id: "LogoDom", pict: LogoDom, resort: "Домінікана"},
+  //   {id: "LogoGreece", pict: LogoGreece, resort: "Греція"},
+  //   {id: "LogoMexico", pict: LogoMexico, resort: "Мексика"},
+  //   {id: "LogoMontenegro", pict: LogoMontenegro, resort: "Чорногорія"},
+  //   {id: "LogoItaly", pict: LogoItaly, resort: "Італія"},
+  //   {id: "LogoCroatia", pict: LogoCroatia, resort: "Хорватія"},
+  //   ]);
+  // }
 
   const toursTemplate = [
     {id: "LogoTurkue", pict: LogoTurkue, resort: "Туреччина"},
@@ -25,7 +39,9 @@ const MainSection = () => {
     {id: "LogoCroatia", pict: LogoCroatia, resort: "Хорватія"},
   ]
 
+  // const toursTemplateElements = props.toursTemplate.map(tour => <ToursTemplateSection id={tour.id} pict={tour.pict} resort={tour.resort}/>)
   const toursTemplateElements = toursTemplate.map(tour => <ToursTemplateSection id={tour.id} pict={tour.pict} resort={tour.resort}/>)
+
 
     return(
       <section className="MainSection">

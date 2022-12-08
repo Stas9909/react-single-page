@@ -4,7 +4,7 @@ import FeedbackCol from "./FeedbackCol/FeedbackCol";
 // import {addFeedbackActionCreator, updateNewFeedbackTextActionCreator} from "../../Redux/feedbackReducer";
 
 const FeedbackSection = (props) => {
-    const FeedbackTemplateElements = props.FeedbackTemplate.map(feedback => <FeedbackCol 
+    const FeedbackTemplateElements = props.FeedbackState.map(feedback => <FeedbackCol 
                                     id={feedback.id}
                                     revievLogo={feedback.revievLogo} 
                                     txtReview={feedback.txtReview} 
@@ -13,14 +13,14 @@ const FeedbackSection = (props) => {
     let newFeedbackTemplateElements = React.createRef();
 
     let addFeedback = () => {
-        props.addFeedback();
+        props.addFeedbackVarible();
     }
 
     let updateNewFeedback = () => {
         let text = newFeedbackTemplateElements.current.value;
         // let text = React.createRef().current.value;
         // let text = e.target.value;
-        props.updateNewFeedback(text)
+        props.updateNewFeedbackVarible(text)
     }
 
     return (

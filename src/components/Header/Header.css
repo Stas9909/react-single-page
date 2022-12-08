@@ -24,20 +24,20 @@ header {
     height: 100%;
 }
 
-
 .DivForRegIcon{
-    height: 23px;
-    width: 23px;
+    height: 29px;
+    width: 29px;
     cursor: pointer;
     display: flex;
     align-self: center;
     background-color: #eff4f8;
     border-radius: 50%;
+    margin-left: 90px;
 }
 
 .regIcon{
-    width: 23px;
-    height: 23px;
+    width: 29px;
+    height: 29px;
 }
 
 [data-tooltip] {
@@ -60,7 +60,8 @@ header {
 
 [data-tooltip]:hover::after {
     opacity: 1; 
-    top: 2em;
+    top: 1.8em;
+    z-index: 1
 }
 
 .DivForBtnRequest {
@@ -144,6 +145,32 @@ header {
 .submitInput:hover {
     background-color: rgba(254, 95, 50, 0.932);
 } 
+
+.DivForLogined{
+    height: 29px;
+    width: 29px;
+    border-radius: 50%;
+    margin-left: 90px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+  
+}
+
+.avaLogined,
+.avaLogined2{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.error{
+    color: red;
+    font-size: 17px;
+    position: absolute;
+    left: 175px;
+    margin-top: 3px;
+    font-weight: bold;
+}
 
 
 
