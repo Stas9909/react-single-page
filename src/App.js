@@ -13,7 +13,7 @@ import EgyptHotelsSection from "./components/Main/CountriesSection/EgyptHotelsSe
 import OAEHotelsSection from "./components/Main/CountriesSection/OAEHotelsSection/OAEHotelsSection";
 
 import FeedbackSectionContainer from "./components/FeedbackSection/FeedbackSectionContainer";
-import MainSectionContainer from "./components/MainSection/MainSectionContainer";
+// import MainSectionContainer from "./components/MainSection/MainSectionContainer";
 
 function App() {
   return (
