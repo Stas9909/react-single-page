@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-single-page/static/css/main.d3138cc1.css",
-    "main.js": "/react-single-page/static/js/main.edfc6613.js",
+    "main.css": "/react-single-page/static/css/main.d7922b01.css",
+    "main.js": "/react-single-page/static/js/main.4465dd72.js",
     "static/media/Курорт-Олюдениз.jpg": "/react-single-page/static/media/Курорт-Олюдениз.6b766bc2a7dc41fe51d2.jpg",
     "static/media/chernogoriya-v-maye.jpg": "/react-single-page/static/media/chernogoriya-v-maye.e377638b18c61bdca98f.jpg",
     "static/media/shutterstock_114130168.jpg": "/react-single-page/static/media/shutterstock_114130168.11ffeea17ea8630e82b7.jpg",
@@ -21,11 +21,11 @@
     "static/media/3938026.png": "/react-single-page/static/media/3938026.bc069a2b5e1ecdb5e06e.png",
     "static/media/Tourist3.jpg": "/react-single-page/static/media/Tourist3.36b88d0a44eea72f42f9.jpg",
     "index.html": "/react-single-page/index.html",
-    "main.d3138cc1.css.map": "/react-single-page/static/css/main.d3138cc1.css.map",
-    "main.edfc6613.js.map": "/react-single-page/static/js/main.edfc6613.js.map"
+    "main.d7922b01.css.map": "/react-single-page/static/css/main.d7922b01.css.map",
+    "main.4465dd72.js.map": "/react-single-page/static/js/main.4465dd72.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3138cc1.css",
-    "static/js/main.edfc6613.js"
+    "static/css/main.d7922b01.css",
+    "static/js/main.4465dd72.js"
   ]
 }
