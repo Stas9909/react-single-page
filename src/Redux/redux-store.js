@@ -1,10 +1,10 @@
 import {combineReducers, createStore} from "redux";
 import feedbackReducer from "./feedbackReducer";
-import MainSectionReducer from "./MainSectionReducer";
+// import MainSectionReducer from "./MainSectionReducer";
 
 let reducers = combineReducers({
     feedbackVar: feedbackReducer,
-    mainSectionVar: MainSectionReducer,
+    // mainSectionVar: MainSectionReducer,
 })
 
 let store = createStore(reducers);
