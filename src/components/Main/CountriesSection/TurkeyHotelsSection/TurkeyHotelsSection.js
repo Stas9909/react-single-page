@@ -8,8 +8,6 @@ const TurkeyHotelsSection = () => {
         <div className="TurkeyHotelsSection">
             <div className="TurkeyNavWrap">
 
-                {/* {HotelsTemplateElements} */}
-
                 <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
                     <div className="DivForHotelImg">
                         <img className="GeneralImgName" id="firstTurkeyHtlImage" src={firstTurkeyHtlImage} alt=''/>

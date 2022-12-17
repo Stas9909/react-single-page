@@ -21,7 +21,6 @@ Date.prototype.getMonthName = function (){
 let newDate = new Date()
 let date = newDate.getDate();
 let month = newDate.getMonthName();
-// let month = newDate.getMonth() + 1;
 let year = newDate.getFullYear();
 let dateFull = `${date<10?`0${date}`:`${date}`}`;
 let currentData = `${dateFull} ${month} ${year}`;
@@ -44,13 +43,17 @@ const feedbackReducer = (dataState = initialState, action) => {
                 revievLogo: tourist5,
                 txtReview: dataState.NewFeedbackText,
                 dateReview: `${currentData}`
+            };
+            return {
+                ...dataState, 
+                FeedbackTemplate: [...dataState.FeedbackTemplate, NewFeedbackTemplate],
+                NewFeedbackText: "" 
             }
-            dataState.FeedbackTemplate.push(NewFeedbackTemplate);
-            return dataState;
 
         case UPDATE_NEW_FEEDBACK_TEXT:
-            dataState.NewFeedbackText = action.newText;
-            return dataState;
+            return {
+                ...dataState, NewFeedbackText: action.newText
+            };
 
         default:
             return dataState;

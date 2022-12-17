@@ -1,34 +1,26 @@
 import React from "react";
 import {addFeedbackActionCreator, updateNewFeedbackTextActionCreator} from "../../Redux/feedbackReducer";
 import FeedbackSection from "./FeedbackSection";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-const FeedbackSectionContainer = () => {
-
-    return(
-        <StoreContext.Consumer>
-            {
-                (store) => {
-                    let state = store.getState().feedbackVar;
-
-                    let addFeedback = () => {
-                        store.dispatch(addFeedbackActionCreator());
-                    } 
-
-                    let updateNewFeedback =(text) => {
-                        store.dispatch(updateNewFeedbackTextActionCreator(text))
-                    }
-
-                    return(
-                        <FeedbackSection updateNewFeedbackVarible = {updateNewFeedback}
-                                         addFeedbackVarible = {addFeedback}
-                                         FeedbackState= {state.FeedbackTemplate}
-                                         NewFeedbackText = {state.NewFeedbackText}/>
-                    )
-                }
-            }
-        </StoreContext.Consumer>
-    )
+let mapStateToProps = (dataState) => {
+    return {
+        FeedbackTemplate: dataState.feedbackVar.FeedbackTemplate,
+        NewFeedbackText: dataState.feedbackVar.NewFeedbackText
+    }
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewFeedback: (text) => {
+            dispatch(updateNewFeedbackTextActionCreator(text));
+        },
+        addFeedback: () => {
+            dispatch(addFeedbackActionCreator());
+        }
+    }
+}
+
+const FeedbackSectionContainer = connect(mapStateToProps, mapDispatchToProps) (FeedbackSection)
 
 export default FeedbackSectionContainer;

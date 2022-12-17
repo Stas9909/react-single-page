@@ -1,8 +1,7 @@
 import React from "react";
-import MainSection from "./MainSection";
+import {setCountriesActionCreator} from "../../../../Redux/MainSectionReducer";
+import CountryDirectionSection from "./CountryDirectionSection";
 import {connect} from "react-redux";
-import {setCountriesActionCreator} from "../../Redux/MainSectionReducer";
-// let userId = props.router.params.userId;
 
 let mapStateToProps = (dataState) => {
     return {
@@ -18,4 +17,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (MainSection);
+export default connect(mapStateToProps, mapDispatchToProps) (CountryDirectionSection);

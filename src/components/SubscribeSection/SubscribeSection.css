@@ -49,6 +49,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 75%;
+    margin: 0;
 }
 
 .InnerDivForVib{
@@ -133,7 +134,7 @@
 }
 
 .Form{
-    width: 770px;
+    width: 777px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

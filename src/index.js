@@ -5,12 +5,10 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter} from "react-router-dom";
 import store from './Redux/redux-store';
-
-import {Provider} from "./StoreContext";
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderDOM = () => {
   root.render(
     <BrowserRouter>
       <Provider store={store}>
@@ -18,15 +16,6 @@ let rerenderDOM = () => {
      </Provider>
     </BrowserRouter>
   );
-}
 
-rerenderDOM(store.getState());
-store.subscribe(() => {
-  let stateVar = store.getState();
-  rerenderDOM(stateVar)
-});
-
-//или так
-// store.subscribe(() => {rerenderDOM(store.getState())})
 
 

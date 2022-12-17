@@ -1,10 +1,12 @@
 import React from "react";
 import "./ToursTemplateSection.js";
+import {NavLink} from "react-router-dom";
 
 const ToursTemplateSection = (props) => {
 
     return(
-        <a className="ref2" href="#">
+        <NavLink to={`tours/${props.route}`} className="ref2">
+            {/* {props} */}
             <div className="PopDestination">
                 <div className="DivForLogo">
                     <img className="logo" id={props.id} src={props.pict} alt=''/>
@@ -13,7 +15,7 @@ const ToursTemplateSection = (props) => {
                     <p className="ResortName">{props.resort}</p>
                 </div>
             </div>
-        </a>
+        </NavLink>
     )
 }
 

@@ -158,7 +158,8 @@ header {
 }
 
 .avaLogined,
-.avaLogined2{
+.avaLogined2,
+.avaLogined3{
     width: 100%;
     border-radius: 50%;
 }
