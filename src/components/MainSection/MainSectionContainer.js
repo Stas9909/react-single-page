@@ -2,7 +2,6 @@ import React from "react";
 import MainSection from "./MainSection";
 import {connect} from "react-redux";
 import {setCountriesActionCreator} from "../../Redux/MainSectionReducer";
-// let userId = props.router.params.userId;
 
 let mapStateToProps = (dataState) => {
     return {

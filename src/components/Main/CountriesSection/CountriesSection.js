@@ -23,13 +23,4 @@ const CountriesSection = () => {
     )
 }
 
-// const CountriesSection = () => {
-//     return(
-//         <div className="CountriesSection">
-//             <CountriesNav/>
-//             <Outlet/>
-//         </div>
-//     )
-// }
-
 export default CountriesSection;

@@ -5,10 +5,21 @@ import { useState } from 'react';
 
 const CountriesNav = () => {
 
+    // const [showCountries, setShowCountries] = useState(false);
+    // function DeployList () {
+    //     setShowCountries(!showCountries)
+    // }
+
     const [showCountriesList, setShowList] = useState(false);
     function DeployCountriesList () {
         setShowList(!showCountriesList)
     }
+    
+    // const ChangeColor = () => {
+    //     if("showSelectedList"){
+    //         <p className="ParForCountryTxt" style={{ сolor: "#f76c29"}}/>
+    //     }
+    // }
 
     const [showCategoriesList, setShowCategoriesList] = useState(false);
     function DeployCategoriesList () {
@@ -43,6 +54,7 @@ const CountriesNav = () => {
                     </div>
 
                     <div className="DivForCategoriesList">
+                        {/* <p className="ParForCategoryTxt" onClick={DeployCategoryList}>Категорія</p> */}
                         <p className="ParForCategoryTxt" onClick={DeployCategoriesList} style={{showCategoriesList: "true" ? "ParForCategoryTxtSelected" : "ParForCategoryTxt"}}>Категорія</p>
                         <div className={showCategoriesList ? 'showSelectedList' : "hideSelectedList"}>
                             <div className="OneStarHtls">

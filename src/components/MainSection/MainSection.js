@@ -1,7 +1,6 @@
 import React from "react";
 import "./MainSection.css";
 import ToursTemplateSection from "./ToursTemplateSection/ToursTemplateSection";
-import {setCountriesActionCreator} from "../../Redux/MainSectionReducer";
 
 const MainSection = (props) => {
 
@@ -11,7 +10,7 @@ const MainSection = (props) => {
   let addTemplate = () => {
     props.setCountriesActionCreator()
   } 
-
+  
     return(
       <section className="MainSection">
         <img src="./Assets/shutterstock_114130168.jpg" alt="" />

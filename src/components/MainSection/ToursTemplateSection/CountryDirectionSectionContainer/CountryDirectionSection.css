@@ -1,6 +1,7 @@
 .CountryDirectionSectionWrap{
     width: 100%;
     padding-top: 40px;
+    overflow: hidden;
 }
 
 .OuterdivForPicture{
@@ -14,15 +15,17 @@
 }
 
 .DivForCarousel{
-    width: 100%;
+    width: 140%;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    right: 0;
 }
 
 .CarouselPicters{
-    width: 19.9%;
+    width: 14.2%;
     height: 98%;
 }
 

@@ -79,4 +79,19 @@ const Navbar = () => {
   );
 }
 
+// const Navbar = () => {
+//     return (
+//       <nav className="Navbar">
+//          <Nav variant="tabs" defaultActiveKey="/home">
+//       <Nav.Item>
+//         <Nav.Link href="/home">Active</Nav.Link>
+//       </Nav.Item>
+//       <Nav.Item>
+//         <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>
+//       </Nav.Item>
+//     </Nav>
+//       </nav>
+//     )
+// }
+
 export default Navbar;

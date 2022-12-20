@@ -4,7 +4,6 @@
     justify-content: center;
     min-width: 340px;
     background-color: #eff4f8;
-    /* overflow: hidden; */
 }
 
 .ContainerDiv {
@@ -74,10 +73,6 @@ span {
     color: gray;
     border: 1px solid grey;
 }
-
-
-
-
 
 @media (max-width: 460px) {
     .DivForAva,

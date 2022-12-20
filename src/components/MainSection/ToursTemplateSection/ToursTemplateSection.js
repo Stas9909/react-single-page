@@ -1,12 +1,13 @@
 import React from "react";
-import "./ToursTemplateSection.js";
+// import "./ToursTemplateSection.js";
+import "./ToursTemplateSection.css";
 import {NavLink} from "react-router-dom";
 
 const ToursTemplateSection = (props) => {
+    console.log(props)
 
     return(
-        <NavLink to={`tours/${props.route}`} className="ref2">
-            {/* {props} */}
+        <NavLink to={`/react-single-page/${props.route}`} className="ref2">
             <div className="PopDestination">
                 <div className="DivForLogo">
                     <img className="logo" id={props.id} src={props.pict} alt=''/>

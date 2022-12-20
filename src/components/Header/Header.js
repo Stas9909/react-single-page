@@ -49,11 +49,6 @@ const Header = () => {
     e.preventDefault();
 
     let {wrongLog, wrongPass} = document.forms[0];
-    // let  form  = document.forms[0];
-    // let {wrongLog, wrongPass} = form;
-    
-    //Перебрали массив с пом find, так-как он возвр первый найденный эл-т
-    //(в д.с. объект) и если этот объект = тому, что мы ввели, то...
     const userDatabase = (database.find((user) => user.login===wrongLog.value)||
     database.find((user) => user.mail===wrongLog.value));
     if (userDatabase) {
@@ -110,7 +105,6 @@ const Header = () => {
       </div>
     </form>
   </div>)
-
   return (
     <header>
       <div className="AgencyNameDiv">
@@ -120,8 +114,7 @@ const Header = () => {
       <div className="DivForBtnRequest">
         <input className="BtnRequest" type="button" value="відправити запит"/>
       </div>       
-      {
-        
+      {       
         userInfo// isSubmitted 
         ? <div className="DivForLogined">
           <img className="avaLogined" src={userInfo.avatarForLogined} alt=''/>  

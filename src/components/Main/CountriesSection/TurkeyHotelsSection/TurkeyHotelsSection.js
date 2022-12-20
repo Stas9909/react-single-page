@@ -7,7 +7,6 @@ const TurkeyHotelsSection = () => {
     return(
         <div className="TurkeyHotelsSection">
             <div className="TurkeyNavWrap">
-
                 <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
                     <div className="DivForHotelImg">
                         <img className="GeneralImgName" id="firstTurkeyHtlImage" src={firstTurkeyHtlImage} alt=''/>
