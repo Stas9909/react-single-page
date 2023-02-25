@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const setCountriesActionCreator = () => (dispatch, getState) => {
-    axios.get("../../directions.json")
+    axios.get("/directions.json")
     .then(response => 
         dispatch({type: "SET_COUNTRIES", toursTemplate: response.data})
     )
