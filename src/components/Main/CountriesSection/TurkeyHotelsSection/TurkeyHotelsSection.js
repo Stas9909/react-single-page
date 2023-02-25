@@ -1,145 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./TurkeyHotelsSection.css";
-import holidayTypeIcon from "../../../../Assets/sprite_v2_8.png";
-import firstTurkeyHtlImage from "../../../../Assets/Liberty lykia.jpg";
+import setHotelsActionCreator from "../../../../Redux/hotels/CountryHotelsSectionAction";
+import HotelsTemplateElements from "./HotelsTemplateElements/HotelsTemplateElements"
+import { useSelector, useDispatch } from 'react-redux';
 
 const TurkeyHotelsSection = () => {
-    return(
+        const [currentVisibleHotels, setCurrentVisibleHotels] = useState(4);
+        const addMoreHotels = () => {
+            setCurrentVisibleHotels(currentVisibleHotels + 2);
+        }
+
+    const dispatch = useDispatch();
+    const hotelsTemplate = useSelector(state => state.countryHotelsSectionVar);
+
+    useEffect(() => {
+        dispatch(setHotelsActionCreator())
+    }, [])
+
+    if (!hotelsTemplate) return null;
+
+    const hotelsTemplateElements = hotelsTemplate.slice(0, currentVisibleHotels).map(hotel => 
+    <HotelsTemplateElements key={hotel.id}
+        hotelLogo={hotel.hotelLogo}
+        sprite={hotel.sprite}
+        hotelName={hotel.hotelName}
+        hotelCategory={hotel.hotelCategory}
+        resortName={hotel.resortName}
+    />)
+
+    return (
         <div className="TurkeyHotelsSection">
             <div className="TurkeyNavWrap">
-                <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
-                    <div className="DivForHotelImg">
-                        <img className="GeneralImgName" id="firstTurkeyHtlImage" src={firstTurkeyHtlImage} alt=''/>
-                    </div>
-                    <div className="DivForDescriptions">
-                        <a href="#" className="RefForHotelName"><p className="ParForHotelName">LIBERTY LYKIA</p></a>
-                        <p className="ParForCategory">Категорія: 5*</p>
-                        <p className="ParForRegion">Туреччина, Сіде</p>
-                    </div>
-                    <div className="DivForIcons">
-                        <div data-tooltip="Спокійний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgTranquility">
-                                <img className="holidayTypeIcon" id="firstTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Молодіжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgYouth">
-                                <img className="holidayTypeIcon" id="secondTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Сімейний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgFamily">
-                                <img className="holidayTypeIcon" id="thirdTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Пляжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgBeach">
-                                <img className="holidayTypeIcon" id="fourthTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
-                    <div className="DivForHotelImg">
-                        <img className="GeneralImgName" id="firstTurkeyHtlImage" src={firstTurkeyHtlImage} alt=''/>
-                    </div>
-                    <div className="DivForDescriptions">
-                        <a href="#" className="RefForHotelName"><p className="ParForHotelName">LIBERTY LYKIA</p></a>
-                        <p className="ParForCategory">Категорія: 5*</p>
-                        <p className="ParForRegion">Туреччина, Сіде</p>
-                    </div>
-                    <div className="DivForIcons">
-                        <div data-tooltip="Спокійний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgTranquility">
-                                <img className="holidayTypeIcon" id="firstTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Молодіжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgYouth">
-                                <img className="holidayTypeIcon" id="secondTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Сімейний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgFamily">
-                                <img className="holidayTypeIcon" id="thirdTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Пляжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgBeach">
-                                <img className="holidayTypeIcon" id="fourthTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
-                    <div className="DivForHotelImg">
-                        <img className="GeneralImgName" id="firstTurkeyHtlImage" src={firstTurkeyHtlImage} alt=''/>
-                    </div>
-                    <div className="DivForDescriptions">
-                        <a href="#" className="RefForHotelName"><p className="ParForHotelName">LIBERTY LYKIA</p></a>
-                        <p className="ParForCategory">Категорія: 5*</p>
-                        <p className="ParForRegion">Туреччина, Сіде</p>
-                    </div>
-                    <div className="DivForIcons">
-                        <div data-tooltip="Спокійний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgTranquility">
-                                <img className="holidayTypeIcon" id="firstTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Молодіжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgYouth">
-                                <img className="holidayTypeIcon" id="secondTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Сімейний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgFamily">
-                                <img className="holidayTypeIcon" id="thirdTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Пляжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgBeach">
-                                <img className="holidayTypeIcon" id="fourthTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
-                    <div className="DivForHotelImg">
-                        <img className="GeneralImgName" id="firstTurkeyHtlImage" src={firstTurkeyHtlImage} alt=''/>
-                    </div>
-                    <div className="DivForDescriptions">
-                        <a href="#" className="RefForHotelName"><p className="ParForHotelName">LIBERTY LYKIA</p></a>
-                        <p className="ParForCategory">Категорія: 5*</p>
-                        <p className="ParForRegion">Туреччина, Сіде</p>
-                    </div>
-                    <div className="DivForIcons">
-                        <div data-tooltip="Спокійний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgTranquility">
-                                <img className="holidayTypeIcon" id="firstTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Молодіжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgYouth">
-                                <img className="holidayTypeIcon" id="secondTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Сімейний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgFamily">
-                                <img className="holidayTypeIcon" id="thirdTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                        <div data-tooltip="Пляжний відпочинок" className="PopupDescription">
-                            <div className="DivForHolidayType" id="DivForImgBeach">
-                                <img className="holidayTypeIcon" id="fourthTypeIcon" src={holidayTypeIcon} alt=''/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {hotelsTemplateElements}
                 <div className="divForInput">
-                    <input className="InputForMoreProp" type="button" value="показати ще"/>
+                    <input className={currentVisibleHotels >= hotelsTemplate.length ? 'hideBtn' : "InputForMoreProp"} onClick={addMoreHotels} type="button" value="показати ще" />
                 </div>
             </div>
         </div>

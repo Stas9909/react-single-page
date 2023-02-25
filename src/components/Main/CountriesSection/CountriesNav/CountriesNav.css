@@ -9,8 +9,17 @@
 }
 
 .InputForHotelSearching{
-    width: 85%;
-    border-radius: 3px;
+    width: 75%;
+    border-radius: 3px 0 0 3px;
+}
+
+.btnForHotelSearch{
+    position: absolute;
+    border-left: none;
+}
+
+.DivForHotelSerching{
+    /* display: flex; */
 }
 
 .DivForCountriesList{
@@ -65,14 +74,20 @@
     border-top: 1px solid lightgray;
 }
 
-@media (max-width: 680px){
+@media (max-width: 1150px){
     .CountriesNav{
-        width: 30%;
+        width: 214px;
     }
 }
 
-@media (max-width: 480px){
-    .CountriesNav{
-        width: 45%;
+@media (max-width: 500px){
+    .InputForHotelSearching{
+        width: 65%;
     }
+    /* .btnForHotelSearch{
+        position: relative;
+        border-left: none;
+        width: 100%;
+        border-top: none;
+    } */
 }

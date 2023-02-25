@@ -1,14 +1,21 @@
 import React from "react";
 import "./FeedbackSection.css";
 import FeedbackCol from "./FeedbackCol/FeedbackCol";
+import { useState } from "react";
 
 const FeedbackSection = (props) => {
-    const FeedbackTemplateElements = props.FeedbackTemplate.map(feedback => <FeedbackCol 
-                                    id={feedback.id}
+
+    let [currentVisibleFeedbacks, setCurrentVisibleFeedbacks] = useState(4);    
+    const addMoreFeedbacks = () => {
+        setCurrentVisibleFeedbacks(currentVisibleFeedbacks + 2)
+    }
+
+    const FeedbackTemplateElements = props.FeedbackTemplate.slice(0, currentVisibleFeedbacks).map(feedback => <FeedbackCol 
+                                    key={feedback.id}
                                     revievLogo={feedback.revievLogo} 
                                     txtReview={feedback.txtReview} 
                                     dateReview={feedback.dateReview}/>)
-
+                         
     let newFeedbackTemplateElements = React.createRef();
 
     let addFeedback = () => {
@@ -17,8 +24,6 @@ const FeedbackSection = (props) => {
 
     let updateNewFeedback = () => {
         let text = newFeedbackTemplateElements.current.value;
-        // let text = React.createRef().current.value;
-        // let text = e.target.value;
         props.updateNewFeedback(text)
     }
 
@@ -42,7 +47,7 @@ const FeedbackSection = (props) => {
                     </div>                 
                 </div>
                 <div className="divForInput">
-                    <input className="InputForMoreProp" type="button" value="показати ще"/>
+                    <input className={currentVisibleFeedbacks >= props.FeedbackTemplate.length ? "hideFeedbackBtn" : "InputForMoreProp"} onClick={addMoreFeedbacks} type="button" value="показати ще"/>
                 </div>
             </div>
         </section>

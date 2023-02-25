@@ -1,12 +1,15 @@
-import {combineReducers, createStore} from "redux";
+import {combineReducers, legacy_createStore as createStore, applyMiddleware, compose} from "redux";
+import thunk from "redux-thunk";
 import feedbackReducer from "./feedbackReducer";
-import MainSectionReducer from "./MainSectionReducer";
+import mainSectionReducer from "./countries/mainSectionReducer";
+import countryHotelsSectionReducer from "./hotels/countryHotelsSectionReducer";
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
+    countryHotelsSectionVar: countryHotelsSectionReducer,
     feedbackVar: feedbackReducer,
-    mainSectionVar: MainSectionReducer,
+    mainSectionVar: mainSectionReducer,
 })
 
-let store = createStore(reducers);
+let store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 export default store;

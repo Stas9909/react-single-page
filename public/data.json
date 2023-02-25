@@ -1,0 +1,7 @@
+[
+  {"id": 1, "hotelLogo": "Hotel_Liberty_lykia.jpg", "sprite": "sprite_v2_8.png", "hotelName": "LIBERTY LYKIA", "hotelCategory": "Категорія: 5*", "resortName": "Туреччина, Олюденіз" },
+  {"id": 2, "hotelLogo": "Hotel oludeniz resort by z hotels.jpg", "sprite": "sprite_v2_8.png", "hotelName": "OLUDENIZ RESORT BY Z", "hotelCategory": "Категорія: 5*", "resortName": "Туреччина, Олюденіз" },
+  {"id": 3, "hotelLogo": "Hotel orange-county-resort.jpg", "sprite": "sprite_v2_8.png", "hotelName": "ORANGE COUNTY RESORT", "hotelCategory": "Категорія: 5*", "resortName": "Туреччина, Кемер" },
+  {"id": 4, "hotelLogo": "Hotel LONICERA RESORT & SPA HOTEL.jpg", "sprite": "sprite_v2_8.png", "hotelName": "LONICERA RESORT & SPA HOTEL", "hotelCategory": "Категорія: 4*", "resortName": "Туреччина, Аланія" },
+  {"id": 5, "hotelLogo": "Karadut_Cave_Hotel.jpg", "sprite": "sprite_v2_8.png", "hotelName": "KARADUT CAVE HOTEL", "hotelCategory": "Категорія: 3*", "resortName": "Туреччина, Кападокія" }
+]

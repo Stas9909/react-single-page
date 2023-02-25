@@ -6,7 +6,6 @@ const Main = (props) => {
     return(
       <main>
         <Navbar className="Navbar"/>
-        {/* {props.children} */}
       </main>
     )
 }

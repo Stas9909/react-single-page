@@ -1,8 +1,8 @@
 import React from "react";
 import "./Navbar.css";
-import {useState} from "react";
-import Nav from 'react-bootstrap/Nav';
-
+import { useState } from "react";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 const Navbar = () => {
 
@@ -14,84 +14,114 @@ const Navbar = () => {
 
   return (
     <nav className="Navbar">
-      <div className="BlocTabs">
-        <button className={toggleState === 1 ? "TabActive" : "Tab"} onClick={() => toggleTab(1)}>тури online</button>
-        <button className={toggleState === 2 ? "TabActive" : "Tab"} onClick={() => toggleTab(2)}>гарячі тури</button>
-      </div>
-     
-      <div className={toggleState === 1 ? "ContentTab1" : "ContentTab2"}>
-        <div className="DivForInput">
-          <p className="NavText">Куди</p>
-          <select id="NavInput" className="SelectDestination">
-            <optgroup label="Єгипет">
-              <option value="Eg1">Всі курорти</option>
-              <option value="Eg2">Шарм</option>
-              <option value="Eg3">Хургада</option>
-              <option value="Eg4">Марса Алам</option>
-              <option value="Eg5">Дахаб</option>
-              <option value="Eg6">Таба</option>
-            </optgroup>
-            <optgroup label="Туреччина">
-              <option value="TRY1">Всі курорти</option>
-              <option value="TRY2">Аланія</option>
-              <option value="TRY3">Анталія</option>
-              <option value="TRY4">Кемер</option>
-              <option value="TRY5">Мармаріс</option>
-              <option value="TRY6">Фетхіє</option>
-            </optgroup>
-            <optgroup label="Домінікана">
-              <option value="DOM1">Всі курорти</option>
-              <option value="DOM2">Пунта Кана</option>
-              <option value="DOM3">Бока Чіка</option>
-              <option value="DOM4">Баваро</option>
-              <option value="DOM5">Ла Романа</option>
-              <option value="DOM6">Макао</option>
-            </optgroup>
-          </select>
-        </div>
-        <div className="DivForInput">
-          <p className="NavText">Звідки</p>
-          <select id="NavInput" className="SelectDeparture"/>
-        </div>
-        <div className="DivForInput">
-          <p className="NavText">Дата початку туру</p>
-          <div className="DivForNavDate">
-            <input className="NavDate" id="From" type="date"/>
-            <input className="NavDate" id="To" type="date"/>
-          </div> 
-        </div>
-        <div className="DivForInput">
-          <p className="NavText">Тривалість</p>
-          <select id="NavInput" className="SelectDuration"/>
-        </div>
-        <div className="DivForInput">
-          <p className="NavText">Туристи</p>
-          <select id="NavInput" className="SelectTouristsNumber"/>
-        </div>
-        <input className="SearchingTour" type="button" value="знайти тури"/>
 
-      </div>
+      <Formik
+        initialValues={{
+          destination: "Every Egypt's resort",
+          fromWhere: "Kyiv",
+          dateFrom: "",
+          dateTo: "",
+          duration: "7",
+          quantity: "",
+        }}
 
-      <div className={toggleState === 2 ? "ContentTab1" : "ContentTab2"}>
-        <p>CBA</p>
-      </div>
+        const validationSchema={Yup.object({
+          destination: Yup.string(),
+          fromWhere: Yup.string(),
+          dateFrom: Yup.date()
+            .required("Select date"),
+          dateTo: Yup.date()
+            .required("Select date"),
+          duration: Yup.number(),
+          quantity: Yup.number()
+            .required("Select quantity")
+            .min(1, "Min 1")
+            .max(10, "Max 10"),
+        })}
+        onSubmit={values =>
+          console.log(JSON.stringify(values, null, 2))}
+      >
+        <Form>
+          <div className="BlocTabs">
+            <button className={toggleState === 1 ? "TabActive" : "Tab"} onClick={() => toggleTab(1)}>тури online</button>
+            <button className={toggleState === 2 ? "TabActive" : "Tab"} onClick={() => toggleTab(2)}>гарячі тури</button>
+          </div>
+
+          <div className={toggleState === 1 ? "ContentTab1" : "ContentTab2"}>
+
+            <div className="DivForInput">
+              <label htmlFor="SelectDestination" className="NavText">Куди</label>
+              <Field className="NavInput" id="SelectDestination" name="destination" as="select">
+                <optgroup label="Єгипет">
+                  <option value="Every Egypt's resort">Всі курорти</option>
+                  <option value="Sharm">Шарм</option>
+                  <option value="Hurgada">Хургада</option>
+                  <option value="Marsa Alam">Марса Алам</option>
+                  <option value="Dahab">Дахаб</option>
+                  <option value="Taba">Таба</option>
+                </optgroup>
+                <optgroup label="Туреччина">
+                  <option value="Every Turkish's resort">Всі курорти</option>
+                  <option value="Alania">Аланія</option>
+                  <option value="Antalia">Анталія</option>
+                  <option value="Kemer">Кемер</option>
+                  <option value="Marmaris">Мармаріс</option>
+                  <option value="Fethyie">Фетхіє</option>
+                </optgroup>
+                <optgroup label="Домінікана">
+                  <option value="Every Dominicana's resort">Всі курорти</option>
+                  <option value="Punta Cana">Пунта Кана</option>
+                  <option value="Boka Chica">Бока Чіка</option>
+                  <option value="Bavaro">Баваро</option>
+                  <option value="Le Romana">Ла Романа</option>
+                  <option value="Makao">Макао</option>
+                </optgroup>
+              </Field>
+            </div>
+            <div className="DivForInput">
+              <label htmlFor="SelectDeparture" className="NavText">Звідки</label>
+              <Field className="NavInput" id="SelectDeparture" name="fromWhere" as="select">
+                <option value="Kyiv">Київ</option>
+                <option value="Odessa">Одеса</option>
+                <option value="Dnepr">Дніпр</option>
+                <option value="Lviv">Львів</option>
+                <option value="Kharkiv">Харків</option>
+                <option value="Zaporozhye">Запоріжжя</option>
+              </Field>
+            </div>
+            <div className="DivForInput">
+              <label htmlFor="From" className="NavText">Дата початку туру</label>
+              <div className="DivForNavDate">
+                <Field className="NavDate" id="From" name="dateFrom" type="date" />
+                <Field className="NavDate" id="To" name="dateTo" type="date" />
+              </div>
+              <ErrorMessage className='errorForSearchPanel' name='dateFrom' component='div' />
+            </div>
+            <div className="DivForInput">
+              <label htmlFor="SelectDuration" className="NavText">Тривалість</label>
+              <Field className="NavInput" id="SelectDuration" name='duration' as="select">
+                <option value="7">7</option>
+                <option value="10">10</option>
+                <option value="14">14</option>
+              </Field>
+            </div>
+            <div className="DivForInput">
+              <label htmlFor="SelectTouristsNumber" className="NavText">Туристи</label>
+              <Field className="NavInput" id="SelectTouristsNumber" name="quantity" />
+              <ErrorMessage className='errorForSearchPanel' name='quantity' component='div' />
+            </div>
+
+            <input className="SearchingTour" type="submit" value="знайти тури" />
+
+          </div>
+          <div className={toggleState === 2 ? "ContentTab1" : "ContentTab2"}>
+            <p>CBA</p>
+          </div>
+        </Form>
+      </Formik>
+
     </nav>
   );
 }
-
-// const Navbar = () => {
-//     return (
-//       <nav className="Navbar">
-//          <Nav variant="tabs" defaultActiveKey="/home">
-//       <Nav.Item>
-//         <Nav.Link href="/home">Active</Nav.Link>
-//       </Nav.Item>
-//       <Nav.Item>
-//         <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>
-//       </Nav.Item>
-//     </Nav>
-//       </nav>
-//     )
-// }
 
 export default Navbar;

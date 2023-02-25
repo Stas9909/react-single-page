@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MainSection.css";
 import ToursTemplateSection from "./ToursTemplateSection/ToursTemplateSection";
+import { useSelector, useDispatch } from 'react-redux';
+import setCountriesActionCreator from "../../Redux/countries/MainSectionActionCreator";
 
-const MainSection = (props) => {
+const MainSection = () => {
 
-  const toursTemplateElements = props.toursTemplate.map(tour => <ToursTemplateSection id={tour.id} pict={tour.pict} resort={tour.resort} route={tour.route}/>)
-  console.log(toursTemplateElements);
+  let [currentVisibleItems, setCurrentVisibleItems] = useState(9);
+  const addMoreItems = () => {
+    setCurrentVisibleItems(currentVisibleItems + 3)
+  }
 
-  let addTemplate = () => {
-    props.setCountriesActionCreator()
-  } 
+  const dispatch = useDispatch()
+  const toursTemplate = useSelector(state => state.mainSectionVar)
+
+  useEffect(() => {
+    dispatch(setCountriesActionCreator())
+  }, [])
+
+  if (!toursTemplate) return null;
+
+  const toursTemplateElements = toursTemplate.slice(0, currentVisibleItems).map(tour => <ToursTemplateSection id={tour.id} pict={tour.pict} resort={tour.resort} route={tour.route}/>)
+  console.log(toursTemplateElements)
   
     return(
       <section className="MainSection">
@@ -22,7 +34,7 @@ const MainSection = (props) => {
             {toursTemplateElements}    
           </div>
           <div className="divForInput">
-            <input className="InputForMoreProp" type="button" value="показати ще"/>
+            <input className={currentVisibleItems >= toursTemplate.length ? "hideBtn" : "InputForMoreProp"} onClick={addMoreItems} type="button" value="показати ще"/>
           </div>
         </div>
       </section>

@@ -49,6 +49,10 @@ span {
     font-weight: bold;
 }
 
+.hideFeedbackBtn{
+    display: none;
+}
+
 .InputForMoreProp:hover{
     background-color: rgb(107, 182, 107);
     border: none;
@@ -73,6 +77,10 @@ span {
     color: gray;
     border: 1px solid grey;
 }
+
+
+
+
 
 @media (max-width: 460px) {
     .DivForAva,
