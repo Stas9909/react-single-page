@@ -3,11 +3,11 @@ import Navbar from "./Navbar";
 import "./Main.css";
 
 const Main = (props) => {
-    return(
-      <main>
-        <Navbar className="Navbar"/>
-      </main>
-    )
+  return (
+    <main>
+      <Navbar className="Navbar" />
+    </main>
+  )
 }
 
 export default Main;

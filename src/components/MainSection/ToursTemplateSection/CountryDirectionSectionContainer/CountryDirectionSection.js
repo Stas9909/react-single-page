@@ -7,36 +7,23 @@ import setCountriesActionCreator from "../../../../Redux/countries/MainSectionAc
 const CountryDirectionSection = () => {
     const dispatch = useDispatch();
     const toursTemplate = useSelector(state => state.mainSectionVar);
-    console.log(toursTemplate)
 
     useEffect(() => {
         dispatch(setCountriesActionCreator())
-        console.log(CarouselElem.current);
     }, [])
 
     const { direction } = useParams();
-    console.log(direction)
     const tour = toursTemplate.find(item => item.route === direction);
 
     let [slide, setSlide] = useState(1);
 
     let CarouselElem = React.createRef();
 
-    // useEffect(() => {
-    //     const setAutoSlide = setInterval(() => {
-    //         setSlide(() => {
-    //             CarouselElem.current.style.right = `${slide*20}%`;
-    //             return slide >=2 ? slide = 0 : slide++;
-    //         })
-    //     }, 3000);
-    //     return () => clearInterval(setAutoSlide)
-    // }, [slide])
-
     useEffect(() => {
         if (CarouselElem.current.children.length > 0) {
             const setAutoSlide = setInterval(() => {
-                setSlide((slide) => {
-                    const newSlide = slide >= 2 ? 0 : slide + 1;
+                setSlide((slide) => {//в арг передается предыдущее знач slide для того, чтобы можно было его исп внутри функции для вычисления нового значения 
+                    const newSlide = slide >= 2 ? 0 : slide + 1;//вычисляем новое значение для того, чтобы не менять значение slide напрямую, а передать его в setSlide
                     CarouselElem.current.style.right = `${newSlide * 20}%`;
                     return newSlide;
                 });

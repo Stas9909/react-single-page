@@ -1,4 +1,3 @@
-import React from "react";
 import {addFeedbackActionCreator, updateNewFeedbackTextActionCreator} from "../../Redux/feedbackReducer";
 import FeedbackSection from "./FeedbackSection";
 import {connect} from "react-redux";

@@ -20,8 +20,7 @@ const MainSection = () => {
 
   if (!toursTemplate) return null;
 
-  const toursTemplateElements = toursTemplate.slice(0, currentVisibleItems).map(tour => <ToursTemplateSection id={tour.id} pict={tour.pict} resort={tour.resort} route={tour.route}/>)
-  console.log(toursTemplateElements)
+  const toursTemplateElements = toursTemplate.slice(0, currentVisibleItems).map(tour => <ToursTemplateSection key={tour.id} id={tour.id} pict={tour.pict} resort={tour.resort} route={tour.route}/>)
   
     return(
       <section className="MainSection">

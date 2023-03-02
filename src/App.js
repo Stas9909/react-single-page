@@ -10,12 +10,8 @@ import EgyptHotelsSection from "./components/Main/CountriesSection/EgyptHotelsSe
 import OAEHotelsSection from "./components/Main/CountriesSection/OAEHotelsSection/OAEHotelsSection";
 import FeedbackSectionContainer from "./components/FeedbackSection/FeedbackSectionContainer";
 import MainSection from './components/MainSection/MainSection';
-
 import CountryDirectionSection from "./components/MainSection/ToursTemplateSection/CountryDirectionSectionContainer/CountryDirectionSection";
-
-
-
-
+import ExactHotelComponent from './components/Main/CountriesSection/TurkeyHotelsSection/HotelsTemplateElements/ExactHotelComponent';
 
 function App() {
   return (
@@ -26,7 +22,6 @@ function App() {
           <>
             <Main />
             <MainSection />
-
             <FeedbackSectionContainer />
           </>
         } />
@@ -34,17 +29,17 @@ function App() {
           <>
             <Main />
             <MainSection />
-
             <FeedbackSectionContainer />
           </>
         } />
-        <Route path="countries/" element={<CountriesSection />}>
+        <Route path="/react-single-page/:direction" element=
+          {<CountryDirectionSection />} />
+        <Route exact path="countries/" element={<CountriesSection />}>
           <Route path="turkey/" element={<TurkeyHotelsSection />} />
           <Route path="egypt/" element={<EgyptHotelsSection />} />
           <Route path="OAE/" element={<OAEHotelsSection />} />
         </Route>
-        <Route path="/react-single-page/:direction" element=
-          {<CountryDirectionSection />} />
+        <Route path="countries/turkey/hotel" element={<ExactHotelComponent />} />
       </Routes>
       <SubscribeSection />
       <Footer />

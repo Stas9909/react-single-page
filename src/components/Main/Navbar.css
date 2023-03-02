@@ -39,6 +39,9 @@
   .NavInput{
     height: 40px;
     border-radius: 3px;
+    border: none;
+    background-color: white;
+    text-align: left;
   }
 
   #SelectDestination {
@@ -87,10 +90,17 @@
     display: flex;
     align-self: flex-end;
     justify-content: center;
+    line-height: 2.4;
   }
 
   .SearchingTour:hover{
     background-color: rgb(65, 142, 65);;
+  }
+
+  .buttonHeightCorrection{
+    /* margin-top: 23px; */
+    display: flex;
+    /* position: absolute; */
   }
 
   .NavText{
@@ -103,6 +113,16 @@
   .errorForSearchPanel{
     color: crimson;
     position: absolute;
+  }
+
+  #MoveToTheRight{
+    margin-left: 100px;
+  }
+
+  .errorMessageForNavDate{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
   }
 
 @media (max-width: 1150px) {

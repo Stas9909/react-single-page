@@ -1,0 +1,37 @@
+.selectValue, option {
+  font-weight: normal;
+}
+
+.selectOptionsWrapper{
+  border: 1px solid #e0e0e0;
+  max-height: 350px;
+  position: absolute;
+  overflow-y: auto;
+}
+
+.selectOption{
+  background-color: white;
+}
+
+.selectOptionsWrapper::-webkit-scrollbar {
+  width: 19px; 
+}
+
+.selectOptionsWrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px; 
+  background-color: #aaa; 
+}
+
+.selectOptionsWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.selectOption{
+  padding-right: 15px; 
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: rgb(58, 122, 250);
+  width: 113%;
+}

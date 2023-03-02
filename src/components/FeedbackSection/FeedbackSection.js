@@ -5,26 +5,27 @@ import { useState } from "react";
 
 const FeedbackSection = (props) => {
 
-    let [currentVisibleFeedbacks, setCurrentVisibleFeedbacks] = useState(4);    
+    let [currentVisibleFeedbacks, setCurrentVisibleFeedbacks] = useState(4);
     const addMoreFeedbacks = () => {
         setCurrentVisibleFeedbacks(currentVisibleFeedbacks + 2)
     }
 
-    const FeedbackTemplateElements = props.FeedbackTemplate.slice(0, currentVisibleFeedbacks).map(feedback => <FeedbackCol 
-                                    key={feedback.id}
-                                    revievLogo={feedback.revievLogo} 
-                                    txtReview={feedback.txtReview} 
-                                    dateReview={feedback.dateReview}/>)
-                         
+    const FeedbackTemplateElements = props.FeedbackTemplate.slice(0, currentVisibleFeedbacks).map(feedback => <FeedbackCol
+        key={feedback.id}
+        revievLogo={feedback.revievLogo}
+        txtReview={feedback.txtReview}
+        dateReview={feedback.dateReview} />)
+
     let newFeedbackTemplateElements = React.createRef();
 
     let addFeedback = () => {
         props.addFeedback();
+        console.log(props.FeedbackTemplate.length);
     }
 
     let updateNewFeedback = () => {
         let text = newFeedbackTemplateElements.current.value;
-        props.updateNewFeedback(text)
+        props.updateNewFeedback(text)// 
     }
 
     return (
@@ -34,20 +35,20 @@ const FeedbackSection = (props) => {
                     <h2 className="Header">ВІДГУКИ <span>ПРО КОМПАНІЮ</span></h2>
                 </div>
                 <div className="DivForSectionList">
-                    {FeedbackTemplateElements}  
+                    {FeedbackTemplateElements}
                     <div className="DivForAddingFeedback">
                         <textarea className="FeedbackArea"
-                                onChange={updateNewFeedback}
-                                value={props.NewFeedbackText}
-                                ref = {newFeedbackTemplateElements}/>
+                            onChange={updateNewFeedback}
+                            value={props.NewFeedbackText}
+                            ref={newFeedbackTemplateElements} />
                         <button className="FeedbackBtn"
-                                onClick={addFeedback}>
-                                ADD
+                            onClick={addFeedback}>
+                            ADD
                         </button>
-                    </div>                 
+                    </div>
                 </div>
                 <div className="divForInput">
-                    <input className={currentVisibleFeedbacks >= props.FeedbackTemplate.length ? "hideFeedbackBtn" : "InputForMoreProp"} onClick={addMoreFeedbacks} type="button" value="показати ще"/>
+                    <input className={currentVisibleFeedbacks >= props.FeedbackTemplate.length ? "hideFeedbackBtn" : "InputForMoreProp"} onClick={addMoreFeedbacks} type="button" value="показати ще" />
                 </div>
             </div>
         </section>

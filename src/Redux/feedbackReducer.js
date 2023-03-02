@@ -6,7 +6,6 @@ import tourist5 from "../Assets/girl-avatar15.jpg";
 import tourist6 from "../Assets/girl-avatar16.jpg";
 import tourist7 from "../Assets/man-avatar.webp";
 
-
 const ADD_FEEDBACK = "ADD-FEEDBACK";
 const UPDATE_NEW_FEEDBACK_TEXT = "UPDATE-NEW-FEEDBACK-TEXT";
 
@@ -24,6 +23,7 @@ Date.prototype.getMonthNames = function (){
 let newDate = new Date()
 let date = newDate.getDate();
 let month = newDate.getMonthNames();
+// let month = newDate.getMonth() + 1;
 let year = newDate.getFullYear();
 let dateFull = `${date<10?`0${date}`:`${date}`}`;
 let currentData = `${dateFull} ${month} ${year}`;
@@ -54,13 +54,11 @@ const feedbackReducer = (dataState = initialState, action) => {
                 FeedbackTemplate: [...dataState.FeedbackTemplate, NewFeedbackTemplate],
                 NewFeedbackText: "" 
             }
-      
 
         case UPDATE_NEW_FEEDBACK_TEXT:
             return {
                 ...dataState, NewFeedbackText: action.newText//action.payload
             };
-
 
         default:
             return dataState;

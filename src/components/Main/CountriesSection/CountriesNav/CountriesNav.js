@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import "./CountriesNav.css";
-import { NavLink, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
+import { setSearchResultsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
 
 const CountriesNav = () => {
 
@@ -17,20 +18,8 @@ const CountriesNav = () => {
         setShowCategoriesList(!showCategoriesList)
     }
 
-    let hotelsTemplate = [
-        { id: 1, hotelName: "LIBERTY LYKIA" },
-        { id: 2, hotelName: "OLUDENIZ RESORT BY Z" },
-        { id: 3, hotelName: "ORANGE COUNTY RESORT" },
-        { id: 4, hotelName: "LONICERA RESORT & SPA HOTEL" },
-        {id: 5, hotelName: "KARADUT CAVE HOTEL"}
-    ]
-
-    const [showButton, setShowButton] = useState(false);
-    const isEmptyField = useRef(null);
-
-    const handlerInputChange = () => {
-        setShowButton(isEmptyField.current.value.length > 0)
-    }
+    const dispatch = useDispatch();
+    const hotelsTemplate = useSelector(state => state.countryHotelsSectionVar);
 
     return (
         <div className="CountriesNav">
@@ -54,12 +43,10 @@ const CountriesNav = () => {
                             .matches(/^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*(?! )$/, 'Only latin letters,numbers and one space in raw are allowed')
                     })}
                     onSubmit={(values, { resetForm }) => {
-
-                        const filteredHotels = hotelsTemplate.filter(hotel =>
+                        const searchResults = hotelsTemplate.filter(hotel =>
                             hotel.hotelName.toLowerCase().includes(values.hotelName.toLowerCase())
                         );
-                        console.log(filteredHotels);
-
+                        dispatch(setSearchResultsActionCreator(searchResults))
                         resetForm();
                     }}
                 >
@@ -73,7 +60,6 @@ const CountriesNav = () => {
                                     className="InputForHotelSearching"
                                     type="text"
                                     placeholder="Знайти готель"
-                                // onChange={e => searchHotels(e.target.value)}//onChange={e => searchHotels(e.target.value)} - это то же самое, что и onChange={handleChange}
                                 >
                                     {({ field }) => (
                                         <div>
@@ -82,15 +68,9 @@ const CountriesNav = () => {
                                                 className="InputForHotelSearching"
                                                 type="text"
                                                 placeholder="Знайти готель"
-
-                                                // onChange={(e) => {
-                                                //     field.onChange(e);//
-                                                //     handlerInputChange();
-                                                // }}
-                                                // ref={isEmptyField}
                                             />
                                             {values.hotelName.length > 0 && (
-                                            // {showButton && (
+                                                // {showButton && (
                                                 <button className="btnForHotelSearch" type="submit">
                                                     Найти
                                                 </button>
@@ -121,7 +101,6 @@ const CountriesNav = () => {
                                 </div>
 
                                 <div className="DivForCategoriesList">
-                                    {/* <p className="ParForCategoryTxt" onClick={DeployCategoryList}>Категорія</p> */}
                                     <p className="ParForCategoryTxt" onClick={DeployCategoriesList} style={{ showCategoriesList: "true" ? "ParForCategoryTxtSelected" : "ParForCategoryTxt" }}>Категорія</p>
                                     <div className={showCategoriesList ? 'showSelectedList' : "hideSelectedList"}>
                                         <div className="OneStarHtls">

@@ -23,7 +23,6 @@ const Header = () => {
   const [logValue, setLogValue] = useState('');
   const [passValue, setPassValue] = useState('');
 
-
   const database = [
     {
       id: 1,
@@ -76,9 +75,6 @@ const Header = () => {
   const renderErrorMessage = (name) =>
     name === errorMessage.name && (<div className="error">{errorMessage.message}</div>)
 
-
-
-
   const rememberTheLog = useRef();
   const rememberThePass = useRef();
   const rememberTheUser = useRef();
@@ -88,7 +84,6 @@ const Header = () => {
     const pass = localStorage.getItem("rememberThePass")
     const userDatabase = (database.find((user) => user.login === log) ||
       database.find((user) => user.mail === log));
-    console.log(userDatabase)
     if (userDatabase) {
       if (userDatabase.password === pass) {
         setUserInfo(userDatabase);
@@ -97,9 +92,6 @@ const Header = () => {
   }, [])
 
   const handleRememberMe = (e) => {
-    console.log(database.find((user) => (user.login === logValue && user.password === passValue)))
-    console.log(rememberTheLog)
-    console.log(rememberThePass)
     localStorage.setItem("rememberTheUser", e.target.checked)
     if (e.target.checked) {
       if (database.find((user) => (user.login === logValue && user.password === passValue))) {
@@ -131,10 +123,8 @@ const Header = () => {
               autoComplete="on"
               className="formInput"
               type="login"
-
               value={logValue}
               onChange={(e) => setLogValue(e.target.value)}
-
               ref={rememberTheLog}
               name="wrongLog"
             />
@@ -147,10 +137,8 @@ const Header = () => {
               autoComplete="on"
               className="formInput"
               type="password"
-
               value={passValue}
               onChange={(e) => setPassValue(e.target.value)}
-
               ref={rememberThePass}
               name="wrongPass"
             />
@@ -159,7 +147,7 @@ const Header = () => {
           <div className="loginRemember">
             <label className="Label">
               <input type="checkbox" name="flag" id="rememberme"
-                 ref={rememberTheUser} onChange={handleRememberMe} />
+                ref={rememberTheUser} onChange={handleRememberMe} />
               Запам'ятати мене
             </label>
           </div>
@@ -180,7 +168,7 @@ const Header = () => {
         <input className="BtnRequest" type="button" value="відправити запит" />
       </div>
       {
-        !userInfo 
+        !userInfo // isSubmitted 
           ? (<div data-tooltip="Увійти" className="DivForRegIcon">
             <img className="regIcon" onClick={addStyle} src={regIcon} alt='' />
           </div>)
