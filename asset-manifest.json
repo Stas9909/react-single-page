@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-single-page/static/css/main.5b5ebd48.css",
-    "main.js": "/react-single-page/static/js/main.e2c40ee8.js",
+    "main.css": "/react-single-page/static/css/main.db0ad546.css",
+    "main.js": "/react-single-page/static/js/main.dcf9c5b3.js",
     "static/media/Thailand background.jpg": "/react-single-page/static/media/Thailand background.f1d601b728a31bfddf47.jpg",
     "static/media/CxXi4K.jpg": "/react-single-page/static/media/CxXi4K.79f2a999dbd58de42ec3.jpg",
     "static/media/Italy background.jpg": "/react-single-page/static/media/Italy background.e172e686f84fdf607e01.jpg",
@@ -87,11 +87,11 @@
     "static/media/Tourist3.jpg": "/react-single-page/static/media/Tourist3.36b88d0a44eea72f42f9.jpg",
     "static/media/girl-avatar6.jpg": "/react-single-page/static/media/girl-avatar6.f8c1f000e3d10f204db5.jpg",
     "index.html": "/react-single-page/index.html",
-    "main.5b5ebd48.css.map": "/react-single-page/static/css/main.5b5ebd48.css.map",
-    "main.e2c40ee8.js.map": "/react-single-page/static/js/main.e2c40ee8.js.map"
+    "main.db0ad546.css.map": "/react-single-page/static/css/main.db0ad546.css.map",
+    "main.dcf9c5b3.js.map": "/react-single-page/static/js/main.dcf9c5b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b5ebd48.css",
-    "static/js/main.e2c40ee8.js"
+    "static/css/main.db0ad546.css",
+    "static/js/main.dcf9c5b3.js"
   ]
 }
