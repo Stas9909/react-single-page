@@ -1,13 +1,15 @@
-import {combineReducers, legacy_createStore as createStore, applyMiddleware, compose} from "redux";
+import { combineReducers, legacy_createStore as createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import feedbackReducer from "./feedbackReducer";
 import mainSectionReducer from "./countries/mainSectionReducer";
 import countryHotelsSectionReducer from "./hotels/countryHotelsSectionReducer";
+import searchHotelResultsReducer from "./searchHotel/searchHotelResultsReducer";
 
 let rootReducer = combineReducers({
-    countryHotelsSectionVar: countryHotelsSectionReducer,
-    feedbackVar: feedbackReducer,
-    mainSectionVar: mainSectionReducer,
+  searchHotelResultsVar: searchHotelResultsReducer,
+  countryHotelsSectionVar: countryHotelsSectionReducer,
+  feedbackVar: feedbackReducer,
+  mainSectionVar: mainSectionReducer,
 })
 
 const devTools =

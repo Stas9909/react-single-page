@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./CountriesNav.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
-import { setSearchResultsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
+import { setHotelsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
+import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 
 const CountriesNav = () => {
 
@@ -43,9 +44,11 @@ const CountriesNav = () => {
                             .matches(/^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*(?! )$/, 'Only latin letters,numbers and one space in raw are allowed')
                     })}
                     onSubmit={(values, { resetForm }) => {
+
                         const searchResults = hotelsTemplate.filter(hotel =>
                             hotel.hotelName.toLowerCase().includes(values.hotelName.toLowerCase())
                         );
+
                         dispatch(setSearchResultsActionCreator(searchResults))
                         resetForm();
                     }}

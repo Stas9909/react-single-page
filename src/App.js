@@ -39,7 +39,7 @@ function App() {
           <Route path="egypt/" element={<EgyptHotelsSection />} />
           <Route path="OAE/" element={<OAEHotelsSection />} />
         </Route>
-        <Route path="countries/turkey/hotel" element={<ExactHotelComponent />} />
+        <Route path="countries/turkey/:id" element={<ExactHotelComponent />} />
       </Routes>
       <SubscribeSection />
       <Footer />

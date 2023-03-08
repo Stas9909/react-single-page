@@ -1,11 +1,18 @@
 import React from "react";
 import "./HotelsTemplateElements.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const HotelsTemplateElements = (props) => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(`/countries/turkey/${props.id}`, { state: { id: props.id } });
+    };
+
     return (
-        <NavLink state={{ id: props.id }}
-            to='/countries/turkey/hotel' className="ref2">
+        <div onClick={handleClick} className="ref2">
+        {/* <NavLink to={`/countries/turkey/${props.id}`} className="ref2"> */}
+        {/* <NavLink state={{ id: props.id }}
+            to={`/countries/turkey/${props.id}`} className="ref2"> */}
             <div>
                 <div className="TurkeyHtlsBlock" id="firstTurkeyHtlBlock">
                     <div className="DivForHotelImg">
@@ -42,7 +49,8 @@ const HotelsTemplateElements = (props) => {
                     </div>
                 </div>
             </div>
-        </NavLink>
+            {/* </NavLink> */}
+        </div>
     )
 }
 

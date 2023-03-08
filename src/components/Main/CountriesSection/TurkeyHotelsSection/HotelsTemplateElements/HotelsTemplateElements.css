@@ -1,6 +1,5 @@
 .TurkeyHotelsSection{
     width: 100%;
-    /* background-color: cadetblue; */
 }
 
 .TurkeyNavWrap{
@@ -132,12 +131,6 @@
     .DivForIcons{
         display: none;
     }
-}
-
-@media (max-width: 680px){
-    /* .TurkeyHotelsSection{
-        width: 65%;
-    } */
 }
 
 @media (max-width: 480px){

@@ -4,6 +4,7 @@
     justify-content: center;
     min-width: 340px;
     background-color: #eff4f8;
+    /* overflow: hidden; */
 }
 
 .ContainerDiv {

@@ -11,8 +11,15 @@ const Navbar = () => {
     setToggleState(id)
   }
 
+  const [hideSelection, setHideSelection] = useState(false)
+  const hideSelectionHandler = () => {
+    setHideSelection(!hideSelection)
+  }
+
   return (
-    <nav className="Navbar">
+    <nav className="Navbar"
+      onClick={(e) => { !e.target.classList.contains('selectOptionsWrapper') && hideSelectionHandler() }}
+    >
 
       <Formik
         initialValues={{
@@ -40,6 +47,7 @@ const Navbar = () => {
       >
 
         {({ values, touched, setFieldValue }) => {
+          console.log(values, touched)
           return (
             <Form>
               <div className="BlocTabs">

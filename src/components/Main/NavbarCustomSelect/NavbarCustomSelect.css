@@ -7,6 +7,8 @@
   max-height: 350px;
   position: absolute;
   overflow-y: auto;
+  /* scrollbar-width: thin; */
+  /* scrollbar-color: #aaa #eee; */
 }
 
 .selectOption{
@@ -18,12 +20,12 @@
 }
 
 .selectOptionsWrapper::-webkit-scrollbar-thumb {
-  border-radius: 10px; 
-  background-color: #aaa; 
+  border-radius: 10px; /* Добавляет скругление на полосе прокрутки */
+  background-color: #aaa; /* Настраивает цвет полосы прокрутки */
 }
 
 .selectOptionsWrapper::-webkit-scrollbar-thumb:hover {
-  background-color: #999;
+  background-color: #999; /* Настраивает цвет полосы прокрутки при наведении курсора мыши */
 }
 
 .selectOption{

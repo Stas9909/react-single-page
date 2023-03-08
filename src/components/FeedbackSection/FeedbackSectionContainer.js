@@ -1,6 +1,6 @@
-import {addFeedbackActionCreator, updateNewFeedbackTextActionCreator} from "../../Redux/feedbackReducer";
+import { addFeedbackActionCreator, updateNewFeedbackTextActionCreator } from "../../Redux/feedbackReducer";
 import FeedbackSection from "./FeedbackSection";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 let mapStateToProps = (dataState) => {
     return {
@@ -20,6 +20,6 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const FeedbackSectionContainer = connect(mapStateToProps, mapDispatchToProps) (FeedbackSection)
+const FeedbackSectionContainer = connect(mapStateToProps, mapDispatchToProps)(FeedbackSection)
 
 export default FeedbackSectionContainer;

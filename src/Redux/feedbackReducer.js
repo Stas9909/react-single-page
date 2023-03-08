@@ -6,6 +6,7 @@ import tourist5 from "../Assets/girl-avatar15.jpg";
 import tourist6 from "../Assets/girl-avatar16.jpg";
 import tourist7 from "../Assets/man-avatar.webp";
 
+
 const ADD_FEEDBACK = "ADD-FEEDBACK";
 const UPDATE_NEW_FEEDBACK_TEXT = "UPDATE-NEW-FEEDBACK-TEXT";
 
@@ -54,11 +55,15 @@ const feedbackReducer = (dataState = initialState, action) => {
                 FeedbackTemplate: [...dataState.FeedbackTemplate, NewFeedbackTemplate],
                 NewFeedbackText: "" 
             }
+            // dataState.FeedbackTemplate.push(NewFeedbackTemplate);
+            // return dataState;
 
         case UPDATE_NEW_FEEDBACK_TEXT:
             return {
                 ...dataState, NewFeedbackText: action.newText//action.payload
             };
+            // dataState.NewFeedbackText = action.newText;
+            // return dataState;
 
         default:
             return dataState;

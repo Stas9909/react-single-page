@@ -2,6 +2,7 @@ import React from "react";
 import "./NavbarCustomSelect.css";
 
 const NavbarCustomSelect = (props) => {
+  console.log(props)
   const { label, optionList, setOptionValue } = props;
 
   const [showDropdown, setShowDropdown] = React.useState(false);//открывает и закрывает селект
@@ -18,7 +19,7 @@ const NavbarCustomSelect = (props) => {
   }
 
   return (
-    <div className="selectWrapper" onClick={(e) => !e.target.classList.contains('selectOptionsWrapper') && openHandler()}>
+    <div className="selectWrapper" >
       <label htmlFor="SelectDestination" className="NavText">{label}</label>
       <button type="button" onClick={openHandler} className="NavInput" id="SelectDestination">
         <div className="optionsContainer">

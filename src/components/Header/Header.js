@@ -12,6 +12,7 @@ const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
   function addStyle() {
     setShowPopup(!showPopup)
+    
   }
 
   const [errorMessage, setErrorMessage] = useState({});
@@ -123,8 +124,10 @@ const Header = () => {
               autoComplete="on"
               className="formInput"
               type="login"
+
               value={logValue}
               onChange={(e) => setLogValue(e.target.value)}
+
               ref={rememberTheLog}
               name="wrongLog"
             />
@@ -137,8 +140,10 @@ const Header = () => {
               autoComplete="on"
               className="formInput"
               type="password"
+
               value={passValue}
               onChange={(e) => setPassValue(e.target.value)}
+
               ref={rememberThePass}
               name="wrongPass"
             />
