@@ -51,6 +51,43 @@
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 3px;
+  position: relative;
+}
+
+.wrapperForHtlPict::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -13px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+  cursor: pointer;
+}
+
+.wrapperForHtlPict:hover::after {
+  border-left: 10px solid #000;
+}
+
+.wrapperForHtlPict::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -13px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fff;
+  cursor: pointer;
+}
+
+.wrapperForHtlPict:hover::before {
+  border-right: 10px solid #000;
 }
 
 .linkForOtherPict, .TurkeyHotelPict {
