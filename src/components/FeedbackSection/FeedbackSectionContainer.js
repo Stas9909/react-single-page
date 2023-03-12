@@ -1,6 +1,7 @@
 import { addFeedbackActionCreator, updateNewFeedbackTextActionCreator } from "../../Redux/feedbackReducer";
 import FeedbackSection from "./FeedbackSection";
 import { connect } from "react-redux";
+import { setIsLoadingActionCreator } from "../../Redux/preloader/preloaderAction";
 
 let mapStateToProps = (dataState) => {
     return {
@@ -15,7 +16,11 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(updateNewFeedbackTextActionCreator(text));
         },
         addFeedback: () => {
-            dispatch(addFeedbackActionCreator());
+            dispatch(setIsLoadingActionCreator(true));//preloader
+            setTimeout(() => {
+                dispatch(addFeedbackActionCreator());
+                dispatch(setIsLoadingActionCreator(false));//preloader
+            }, 500)
         }
     }
 }

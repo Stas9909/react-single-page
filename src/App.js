@@ -12,10 +12,12 @@ import FeedbackSectionContainer from "./components/FeedbackSection/FeedbackSecti
 import MainSection from './components/MainSection/MainSection';
 import CountryDirectionSection from "./components/MainSection/ToursTemplateSection/CountryDirectionSectionContainer/CountryDirectionSection";
 import ExactHotelComponent from './components/Main/CountriesSection/TurkeyHotelsSection/HotelsTemplateElements/ExactHotelComponent';
+import Preloader from './components/Preloader/Preloader';
 
 function App() {
   return (
     <div className='app'>
+      <Preloader />
       <Header />
       <Routes>
         <Route path="/react-single-page/" element={
@@ -39,7 +41,7 @@ function App() {
           <Route path="egypt/" element={<EgyptHotelsSection />} />
           <Route path="OAE/" element={<OAEHotelsSection />} />
         </Route>
-        <Route path="countries/turkey/:id" element={<ExactHotelComponent />} />
+        <Route path="countries/:countryName/:id" element={<ExactHotelComponent />} />
       </Routes>
       <SubscribeSection />
       <Footer />

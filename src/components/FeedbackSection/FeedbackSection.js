@@ -26,7 +26,7 @@ const FeedbackSection = (props) => {
         let text = newFeedbackTemplateElements.current.value;
         // let text = React.createRef().current.value;
         // let text = e.target.value;
-        props.updateNewFeedback(text)// 
+        props.updateNewFeedback(text)
     }
 
     return (

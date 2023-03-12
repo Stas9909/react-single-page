@@ -47,7 +47,6 @@ const Navbar = () => {
       >
 
         {({ values, touched, setFieldValue }) => {
-          console.log(values, touched)
           return (
             <Form>
               <div className="BlocTabs">

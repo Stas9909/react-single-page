@@ -7,7 +7,6 @@
 .divForHotelPictures{
   height: 500px;
   width: 100%;
-  /* background-image: url("../../../../../Assets/Turkey_hotel_Oludeniz_Resort_By_Z_1.jpg"); */
   background-size: cover;
   background-position: center ;
   background-repeat: no-repeat;
@@ -54,22 +53,75 @@
   position: relative;
 }
 
-.wrapperForHtlPict::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -13px;
-  width: 0;
-  height: 0;
-  transform: translateY(-50%);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #fff;
+.modalForImage {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalForImage .currentImageInPortal {
+  height: 600px;
+  width: 880px;
+  /* object-fit: contain; */
+  border: 3px solid white;
+  /* position: relative; */
+}
+
+.currentImageInPortal:hover{
   cursor: pointer;
 }
 
-.wrapperForHtlPict:hover::after {
-  border-left: 10px solid #000;
+.modalForImage:hover::before {
+  content: '';
+  padding: 12px;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  transform: translateY(-50%) rotate(-135deg);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.modalForImage:hover::after {
+  content: '';
+  padding: 12px;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  border-top: 5px solid white;
+  border-left: 5px solid #fff;
+  transform: translateY(-50%) rotate(135deg);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.closePortalButton{
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+  font-size: 14px;
+  width: 23px;
+  height: 23px;
+  line-height: 18px;
+  text-align: center;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  border-radius: 50%;
 }
 
 .wrapperForHtlPict::before {
@@ -80,10 +132,28 @@
   width: 0;
   height: 0;
   transform: translateY(-50%);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
   border-right: 10px solid #fff;
   cursor: pointer;
+}
+
+.wrapperForHtlPict::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -13px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 10px solid #fff;
+  cursor: pointer;
+}
+
+.wrapperForHtlPict:hover::after {
+  border-left: 10px solid #000;
 }
 
 .wrapperForHtlPict:hover::before {
@@ -104,6 +174,14 @@
   grid-row: 1 / 3;
 }
 
+@media (max-width: 920px){
+  .modalForImage .currentImageInPortal {
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 860px){
   .wrapperForHtlPict {
     width: 700px;
@@ -114,7 +192,7 @@
     justify-content: center;
   }
 
-  .linkForFirstPict, .linkForOtherPict {
+  .firstTurkeyPict, .TurkeyHotelPict {
     width: 25%;
     height: 50%;
   }
@@ -129,6 +207,20 @@
     width: auto;
     display: flex;
     text-align: center;
+  }
+}
+
+@media (max-width: 740px){
+  .wrapperForHtlPict::after {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+  }
+
+  .wrapperForHtlPict::before {
+    position: absolute;
+    top: 50%;
+    left: 30px;
   }
 }
 

@@ -4,11 +4,9 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
-import { setHotelsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
 import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 
 const CountriesNav = () => {
-
     const [showCountriesList, setShowList] = useState(false);
     function DeployCountriesList() {
         setShowList(!showCountriesList)
@@ -63,6 +61,7 @@ const CountriesNav = () => {
                                     className="InputForHotelSearching"
                                     type="text"
                                     placeholder="Знайти готель"
+
                                 >
                                     {({ field }) => (
                                         <div>

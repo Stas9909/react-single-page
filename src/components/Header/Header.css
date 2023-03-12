@@ -96,10 +96,6 @@ header {
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px #4f92d0;
     background-color: rgba(90, 90, 154, 0.501);
-    /* background-color: -moz-radial-gradient(center, ellipse cover, #6195ed, #ffcfcf);
-    background-color: -webkit-linear-gradient(top, #6195ed, #ffcfcf);
-    background-color: -o-linear-gradient(top, #6195ed, #ffcfcf);
-    background-color: -ms-linear-gradient(top, #6195ed, #ffcfcf); */
 }
 
 .RegField{
@@ -108,21 +104,6 @@ header {
     top: 42px;
     right: 0;
 }
-
-/* .PopupField{
-    width: 300px;
-    height: 150px;
-    background-color: cornflowerblue;
-    position: absolute;
-    top: 42px;
-    right: 0;  
-    transform: translate(100%, 0);
-    transition: all linear 0.3s;
-}
-
-.RegField{
-    transform: translate(0, 0);
-} */
 
 .Label{
     color: powderblue;
@@ -173,10 +154,6 @@ header {
     margin-top: 3px;
     font-weight: bold;
 }
-
-
-
-
 
 @media (max-width: 640px){
     .DivForBtnRequest{

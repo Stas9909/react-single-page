@@ -133,12 +133,6 @@
     }
 }
 
-@media (max-width: 680px){
-    /* .TurkeyHotelsSection{
-        width: 65%;
-    } */
-}
-
 @media (max-width: 480px){
     .TurkeyHtlsBlock{
         display: flex;

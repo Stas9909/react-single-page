@@ -4,8 +4,12 @@ import { setHotelsActionCreator } from "../../../../Redux/hotels/CountryHotelsSe
 import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 import HotelsTemplateElements from "./HotelsTemplateElements/HotelsTemplateElements"
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation, useParams } from "react-router-dom";
 
 const TurkeyHotelsSection = () => {
+    const location = useLocation()//из pathname в location вытягиваем название страны
+    const countryName = location.pathname.split("/")[location.pathname.split("/").length - 1]//[2]
+
     const [currentVisibleHotels, setCurrentVisibleHotels] = useState(4);
     const addMoreHotels = () => {
         setCurrentVisibleHotels(currentVisibleHotels + 2);
@@ -16,31 +20,35 @@ const TurkeyHotelsSection = () => {
     const searchResults = useSelector(state => state.searchHotelResultsVar);
 
     useEffect(() => {
-        (dispatch(setHotelsActionCreator()))
-    }, [dispatch])
+        dispatch(setHotelsActionCreator(countryName))
+    }, [])
 
     const hotelsTemplateElements = (searchResults && searchResults.length > 0)
         ? searchResults.slice(0, currentVisibleHotels).map(hotel => {
             const { hotelName } = hotel || {};
-            return <HotelsTemplateElements key={hotel.id}
+            return <HotelsTemplateElements
+                key={hotel.id}
                 id={hotel.id}
                 hotelLogo={hotel.hotelLogo}
                 sprite={hotel.sprite}
                 hotelName={hotelName}
                 hotelCategory={hotel.hotelCategory}
                 resortName={hotel.resortName}
-            />})
+            />
+        })
         : (hotelsTemplate && hotelsTemplate.length > 0)
             ? hotelsTemplate.slice(0, currentVisibleHotels).map(hotel => {
                 const { hotelName } = hotel || {};
-                return <HotelsTemplateElements key={hotel.id}
+                return <HotelsTemplateElements
+                    key={hotel.id}
                     id={hotel.id}
                     hotelLogo={hotel.hotelLogo}
                     sprite={hotel.sprite}
                     hotelName={hotelName}
                     hotelCategory={hotel.hotelCategory}
                     resortName={hotel.resortName}
-                />})
+                />
+            })
             : null;
 
     return (

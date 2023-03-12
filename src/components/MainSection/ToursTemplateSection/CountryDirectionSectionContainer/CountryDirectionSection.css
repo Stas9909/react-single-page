@@ -48,3 +48,73 @@
 .ParForCountryDescription{
     font-size: 15px;
 }
+
+
+.modalForImage {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .modalForImage .currentImageInPortal {
+    height: 600px;
+    width: 880px;
+    border: 3px solid white;
+  }
+  
+  .currentImageInPortal:hover{
+    cursor: pointer;
+  }
+  
+  .modalForImage:hover::before {
+    content: '';
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    transform: translateY(-50%) rotate(-135deg);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .modalForImage:hover::after {
+    content: '';
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    border-top: 5px solid white;
+    border-left: 5px solid #fff;
+    transform: translateY(-50%) rotate(135deg);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .closePortalButton{
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    font-size: 14px;
+    width: 23px;
+    height: 23px;
+    line-height: 18px;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    border-radius: 50%;
+  }

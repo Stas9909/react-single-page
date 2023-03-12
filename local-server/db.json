@@ -1,0 +1,38 @@
+{
+
+    "hotelsTemplate": [
+      {
+        "id": 1,
+        "hotelLogo": "../src/Assets/Hotel Liberty lykia.jpg",
+        "sprite": "holidayTypeIcon",
+        "hotelName": "LIBERTY LYKIA",
+        "hotelCategory": "Категорія: 5*",
+        "resortName": "Туреччина, Олюденіз"
+      },
+      {
+        "id": 2,
+        "hotelLogo": "../src/Assets/Hotel oludeniz resort by z hotels.jpg",
+        "sprite": "holidayTypeIcon",
+        "hotelName": "OLUDENIZ RESORT BY Z",
+        "hotelCategory": "Категорія: 5*",
+        "resortName": "Туреччина, Олюденіз"
+      },
+      {
+        "id": 3,
+        "hotelLogo": "../src/Assets/Hotel orange-county-resort.jpg",
+        "sprite": "holidayTypeIcon",
+        "hotelName": "ORANGE COUNTY RESORT",
+        "hotelCategory": "Категорія: 5*",
+        "resortName": "Туреччина, Кемер"
+      },
+      {
+        "id": 4,
+        "hotelLogo": "../src/Assets/Hotel LONICERA RESORT & SPA HOTEL.jpg",
+        "sprite": "holidayTypeIcon",
+        "hotelName": "LONICERA RESORT & SPA HOTEL",
+        "hotelCategory": "Категорія: 4*",
+        "resortName": "Туреччина, Аланія"
+      }
+    ]
+
+}

@@ -2,7 +2,6 @@ import React from "react";
 import "./NavbarCustomSelect.css";
 
 const NavbarCustomSelect = (props) => {
-  console.log(props)
   const { label, optionList, setOptionValue } = props;
 
   const [showDropdown, setShowDropdown] = React.useState(false);//открывает и закрывает селект

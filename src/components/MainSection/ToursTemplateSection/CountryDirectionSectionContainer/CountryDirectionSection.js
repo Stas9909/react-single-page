@@ -3,8 +3,26 @@ import "./CountryDirectionSection.css";
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import setCountriesActionCreator from "../../../../Redux/countries/MainSectionActionCreator";
+import ReactDOM from 'react-dom';
 
 const CountryDirectionSection = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);//закрываем модлку(открыта или закрыта)
+    const handleModalClose = () => {
+        setIsModalVisible(false)//закрываем модалку
+    }
+
+    const [currentImageUrlIndex, setCurrentImageUrlIndex] = useState(0);//индекс текущей картинки
+    const [imageUrlsArr, setImageUrlsArr] = useState([]);//массив ссылок на все картинки
+
+    const [currentImageUrl, setCurrentImageUrl] = useState('');//здесь храним ссылку на картинку
+    const handleImageClick = (imageUrl, imageUrlsArr) => {
+        setImageUrlsArr(imageUrlsArr);//передаем массив ссылок на картинки
+        setCurrentImageUrlIndex(0);//передаем в массив индекс текущей картинки (по умолч 1 картинка)
+
+        setCurrentImageUrl(imageUrl);//передаем ссылку на картинку и вешаем ее на кажд img на onClick
+        setIsModalVisible(true);//открываем модалку
+    }
+
     const dispatch = useDispatch();
     const toursTemplate = useSelector(state => state.mainSectionVar);
 
@@ -12,18 +30,15 @@ const CountryDirectionSection = () => {
         dispatch(setCountriesActionCreator())
     }, [])
 
-    const { direction } = useParams();
-    const tour = toursTemplate.find(item => item.route === direction);
-
     let [slide, setSlide] = useState(1);
 
     let CarouselElem = React.createRef();
 
     useEffect(() => {
-        if (CarouselElem.current.children.length > 0) {
+        if (!isModalVisible && CarouselElem.current?.children.length > 0) {
             const setAutoSlide = setInterval(() => {
-                setSlide((slide) => {//в арг передается предыдущее знач slide для того, чтобы можно было его исп внутри функции для вычисления нового значения 
-                    const newSlide = slide >= 2 ? 0 : slide + 1;//вычисляем новое значение для того, чтобы не менять значение slide напрямую, а передать его в setSlide
+                setSlide((slide) => {
+                    const newSlide = slide >= 2 ? 0 : slide + 1;
                     CarouselElem.current.style.right = `${newSlide * 20}%`;
                     return newSlide;
                 });
@@ -32,19 +47,38 @@ const CountryDirectionSection = () => {
         }
     }, [CarouselElem]);
 
+    const { direction } = useParams();
+    const tour = toursTemplate.find(item => item.route === direction);
+    if (!tour) return null;
+
     return (
         <div className="CountryDirectionSectionWrap">
             <div className="OuterdivForPicture" route={tour.route} key={tour.id}>
                 <img className="OuterPicture" src={require(`../../../../Assets/${tour.sightseeingPict}`)} alt="" />
             </div>
             <div className="DivForCarousel" ref={CarouselElem}>
-                {tour.CarouselImage1 && <img className="CarouselPicters" src={tour.CarouselImage1 ? require(`../../../../Assets/${tour.CarouselImage1}`) : ''} alt="" />}
-                {tour.CarouselImage2 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage2}`)} alt="" />}
-                {tour.CarouselImage3 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage3}`)} alt="" />}
-                {tour.CarouselImage4 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage4}`)} alt="" />}
-                {tour.CarouselImage5 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage5}`)} alt="" />}
-                {tour.CarouselImage6 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage6}`)} alt="" />}
-                {tour.CarouselImage7 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage7}`)} alt="" />}
+                {tour.CarouselImage1 && <img className="CarouselPicters" src={tour.CarouselImage1 ? require(`../../../../Assets/${tour.CarouselImage1}`) : ''} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage1}`))} />}
+                {tour.CarouselImage2 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage2}`)} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage2}`))} />}
+                {tour.CarouselImage3 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage3}`)} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage3}`))} />}
+                {tour.CarouselImage4 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage4}`)} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage4}`))} />}
+                {tour.CarouselImage5 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage5}`)} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage5}`))} />}
+                {tour.CarouselImage6 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage6}`)} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage6}`))} />}
+                {tour.CarouselImage7 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage7}`)} alt=""
+                    onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage7}`))} />}
+                {isModalVisible &&
+                    (ReactDOM.createPortal(
+                        <div className="modalForImage">
+                            <img className="currentImageInPortal" src={currentImageUrl} alt="" />
+                            <button onClick={handleModalClose} className="closePortalButton">X</button>
+                        </div>,
+                        document.body
+                    ))}
             </div>
             <div className="GeneralDivForText">
                 <div className="wrapForH4">
