@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-single-page/static/css/main.ad85629a.css",
-    "main.js": "/react-single-page/static/js/main.aa65bd5a.js",
+    "main.css": "/react-single-page/static/css/main.efb7aedb.css",
+    "main.js": "/react-single-page/static/js/main.5bf9ed06.js",
     "static/media/Thailand background.jpg": "/react-single-page/static/media/Thailand background.f1d601b728a31bfddf47.jpg",
     "static/media/CxXi4K.jpg": "/react-single-page/static/media/CxXi4K.79f2a999dbd58de42ec3.jpg",
     "static/media/Italy background.jpg": "/react-single-page/static/media/Italy background.e172e686f84fdf607e01.jpg",
@@ -25,6 +25,7 @@
     "static/media/Turkey_hotel_Lonicera_Resort_&_Spa_Hotel_6.jpg": "/react-single-page/static/media/Turkey_hotel_Lonicera_Resort_&_Spa_Hotel_6.69d015dea4475d152db7.jpg",
     "static/media/Turkey_hotel_Lonicera_Resort_&_Spa_Hotel_1.jpg": "/react-single-page/static/media/Turkey_hotel_Lonicera_Resort_&_Spa_Hotel_1.37c9ee2c3c173d391ebe.jpg",
     "static/media/Greece background.webp": "/react-single-page/static/media/Greece background.e6644aad78eecceaf666.webp",
+    "static/media/Egypt_hotel_Meraki_resort_1.jpg": "/react-single-page/static/media/Egypt_hotel_Meraki_resort_1.40434bf262d2bf98c4f6.jpg",
     "static/media/Thailand.jpg": "/react-single-page/static/media/Thailand.d7530d9dc2447975a9e1.jpg",
     "static/media/Turkey_hotel_Oludeniz_Resort_By_Z_3.jpg": "/react-single-page/static/media/Turkey_hotel_Oludeniz_Resort_By_Z_3.fa458cf6ddcb4b020142.jpg",
     "static/media/Egypt_hotel_Sentido_Mamlouk_Palace_Resort_2.jpg": "/react-single-page/static/media/Egypt_hotel_Sentido_Mamlouk_Palace_Resort_2.76a7e6d67b6fdb4129b9.jpg",
@@ -43,6 +44,7 @@
     "static/media/Egypt attractions2.jpg": "/react-single-page/static/media/Egypt attractions2.52055653d112c96c46d6.jpg",
     "static/media/shutterstock_114130168.jpg": "/react-single-page/static/media/shutterstock_114130168.11ffeea17ea8630e82b7.jpg",
     "static/media/Egypt_hotel_Iberotel_Costa_Mares_8.jpg": "/react-single-page/static/media/Egypt_hotel_Iberotel_Costa_Mares_8.257446b0882e444da55d.jpg",
+    "static/media/0E613BED-2D4F-42EA-8884-B977982FE255.jpeg": "/react-single-page/static/media/0E613BED-2D4F-42EA-8884-B977982FE255.03b9f9033b94da856512.jpeg",
     "static/media/Carousel Turkey4.jpg": "/react-single-page/static/media/Carousel Turkey4.dcb18009c6478ea30d4d.jpg",
     "static/media/Egypt_hotel_Sentido_Mamlouk_Palace_Resort_9.jpg": "/react-single-page/static/media/Egypt_hotel_Sentido_Mamlouk_Palace_Resort_9.d70a28c698aab05e73eb.jpg",
     "static/media/Turkey_hotel_Liberty_Lykia_Oludeniz_5.jpg": "/react-single-page/static/media/Turkey_hotel_Liberty_Lykia_Oludeniz_5.5a591b0311ad602d5bb6.jpg",
@@ -132,8 +134,8 @@
     "static/media/Turkey_hotel_Orange_County_Resort_10.jpg": "/react-single-page/static/media/Turkey_hotel_Orange_County_Resort_10.70411621f7d0e1c6d4f4.jpg",
     "static/media/Turkey_hotel_Orange_County_Resort_4.webp": "/react-single-page/static/media/Turkey_hotel_Orange_County_Resort_4.3c7c86ae66c636362c41.webp",
     "static/media/Egypt_hotel_Camel_Dive_Club_&_Hotel_6.jpg": "/react-single-page/static/media/Egypt_hotel_Camel_Dive_Club_&_Hotel_6.ed05ffe1c791923a9d19.jpg",
-    "static/media/Egypt_hotel_Meraki_resort_1.jpg": "/react-single-page/static/media/Egypt_hotel_Meraki_resort_1.7025ff343640e801c0bf.jpg",
     "static/media/Turkey_hotel_Oludeniz_Resort_By_Z_11.jpg": "/react-single-page/static/media/Turkey_hotel_Oludeniz_Resort_By_Z_11.adf84ce2a97a0b258e5a.jpg",
+    "static/media/969E22E0-5A4D-4F94-A4B3-7E419F4E4A0E.jpeg": "/react-single-page/static/media/969E22E0-5A4D-4F94-A4B3-7E419F4E4A0E.4cdf168c6eee5af8da2d.jpeg",
     "static/media/Turkey_hotel_Oludeniz_Resort_By_Z_2.jpeg": "/react-single-page/static/media/Turkey_hotel_Oludeniz_Resort_By_Z_2.0bf56e7f3df7c1d17a16.jpeg",
     "static/media/Egypt_hotel_Camel_Dive_Club_&_Hotel_11.jpg": "/react-single-page/static/media/Egypt_hotel_Camel_Dive_Club_&_Hotel_11.352014df78d39fceabb0.jpg",
     "static/media/Egypt_hotel_Baron_Resort_Sharm_hotel_2.jpg": "/react-single-page/static/media/Egypt_hotel_Baron_Resort_Sharm_hotel_2.d6a390127e15b0f72a8d.jpg",
@@ -202,11 +204,11 @@
     "static/media/Turkey_hotel_Karadut_Cave_Hotel_9.jpg": "/react-single-page/static/media/Turkey_hotel_Karadut_Cave_Hotel_9.67129438872095ff50a5.jpg",
     "static/media/girl-avatar6.jpg": "/react-single-page/static/media/girl-avatar6.f8c1f000e3d10f204db5.jpg",
     "index.html": "/react-single-page/index.html",
-    "main.ad85629a.css.map": "/react-single-page/static/css/main.ad85629a.css.map",
-    "main.aa65bd5a.js.map": "/react-single-page/static/js/main.aa65bd5a.js.map"
+    "main.efb7aedb.css.map": "/react-single-page/static/css/main.efb7aedb.css.map",
+    "main.5bf9ed06.js.map": "/react-single-page/static/js/main.5bf9ed06.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad85629a.css",
-    "static/js/main.aa65bd5a.js"
+    "static/css/main.efb7aedb.css",
+    "static/js/main.5bf9ed06.js"
   ]
 }
