@@ -1,12 +1,12 @@
-import "./EgyptHotelsSection.css";
+import "./EgyptHotelsPage.css";
 import React, { useEffect, useState } from "react";
 import { setHotelsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
 import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useParams } from "react-router-dom";
-import HotelsTemplateElements from "../TurkeyHotelsSection/HotelsTemplateElements/HotelsTemplateElements";
+import HotelsTemplateElements from "../HotelsTemplateElements/HotelsList";
 
-const EgyptHotelsSection = () => {
+const EgyptHotelsPage = () => {
     const location = useLocation()
     const countryName = location.pathname.split("/")[location.pathname.split("/").length - 1]
 
@@ -23,10 +23,14 @@ const EgyptHotelsSection = () => {
         dispatch(setHotelsActionCreator(countryName))
     }, [])
 
-    const hotelsTemplateElements = (searchResults && searchResults.length > 0)
-        ? searchResults.slice(0, currentVisibleHotels).map(hotel => {
+    // event.target.includes(".LinkForCountry ") 
+
+    const hotels = (searchResults?.length > 0 ? searchResults : hotelsTemplate)
+    const hotelsTemplateElements = hotels
+        ? hotels.slice(0, currentVisibleHotels).map(hotel => {
             const { hotelName } = hotel || {};
-            return <HotelsTemplateElements key={hotel.id}
+            return <HotelsTemplateElements
+                key={hotel.id}
                 id={hotel.id}
                 hotelLogo={hotel.hotelLogo}
                 sprite={hotel.sprite}
@@ -35,23 +39,11 @@ const EgyptHotelsSection = () => {
                 resortName={hotel.resortName}
             />
         })
-        : (hotelsTemplate && hotelsTemplate.length > 0)
-            ? hotelsTemplate.slice(0, currentVisibleHotels).map(hotel => {
-                const { hotelName } = hotel || {};
-                return <HotelsTemplateElements key={hotel.id}
-                    id={hotel.id}
-                    hotelLogo={hotel.hotelLogo}
-                    sprite={hotel.sprite}
-                    hotelName={hotelName}
-                    hotelCategory={hotel.hotelCategory}
-                    resortName={hotel.resortName}
-                />
-            })
-            : null;
+        : null;
 
     return (
-        <div className="TurkeyHotelsSection">
-            <div className="TurkeyNavWrap">
+        <div className="CountryHotelsPage">
+            <div className="CountryNavWrap">
                 {hotelsTemplateElements}
                 <div className="divForInput">
                     <input className={currentVisibleHotels >= hotelsTemplate.length ? 'hideBtn' : "InputForMoreProp"} onClick={addMoreHotels} type="button" value="показати ще" />
@@ -61,4 +53,4 @@ const EgyptHotelsSection = () => {
     )
 }
 
-export default EgyptHotelsSection;
+export default EgyptHotelsPage;

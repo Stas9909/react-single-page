@@ -1,6 +1,5 @@
 
-  .CountriesSection{
-    /* width: 100%; */
+  .CountriesPage{
     display: flex;
     justify-content: center;
     min-width: 340px;

@@ -1,17 +1,17 @@
-.TurkeyHotelsSection{
+.CountryHotelsPage{
     width: 100%;
 }
 
-.TurkeyNavWrap{
+.CountryNavWrap{
     margin-top: 75px;
 }
 
 .TurkeyHtlsBlock{
     width: 100%;
-    height: 160px;
     display: flex;
     border-bottom: 1px dashed lightgray;
     align-items: center;
+    box-sizing: content-box;
 }
 
 .DivForHotelImg{
@@ -131,6 +131,12 @@
     .DivForIcons{
         display: none;
     }
+}
+
+@media (max-width: 680px){
+    /* .TurkeyHotelsSection{
+        width: 65%;
+    } */
 }
 
 @media (max-width: 480px){

@@ -1,4 +1,6 @@
-let initialState = []
+let initialState = {
+    turkey: [], egypt: [], OAE: []
+}
 
 const countryHotelsSectionReducer = (dataState = initialState, action) => {
     switch (action.type) {

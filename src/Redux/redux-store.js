@@ -5,8 +5,10 @@ import mainSectionReducer from "./countries/mainSectionReducer";
 import countryHotelsSectionReducer from "./hotels/countryHotelsSectionReducer";
 import searchHotelResultsReducer from "./searchHotel/searchHotelResultsReducer";
 import preloaderReducer from "./preloader/preloaderReducer";
+import modalReducer from "./modal/modalReducer";
 
 let rootReducer = combineReducers({
+  modalVar: modalReducer,
   preloaderVar: preloaderReducer,
   searchHotelResultsVar: searchHotelResultsReducer,
   countryHotelsSectionVar: countryHotelsSectionReducer,

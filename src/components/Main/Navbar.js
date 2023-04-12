@@ -15,10 +15,10 @@ const Navbar = () => {
   const hideSelectionHandler = () => {
     setHideSelection(!hideSelection)
   }
-
+  
   return (
-    <nav className="Navbar"
-      onClick={(e) => { !e.target.classList.contains('selectOptionsWrapper') && hideSelectionHandler() }}
+    <nav className="Navbar" 
+    onClick={(e) => {!e.target.classList.contains('selectOptionsWrapper') && hideSelectionHandler() }}
     >
 
       <Formik

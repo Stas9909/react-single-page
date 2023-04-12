@@ -17,6 +17,8 @@ const NavbarCustomSelect = (props) => {
     setOptionValue(option.value)
   }
 
+  // onClick={(e) => { openHandler()}}
+
   return (
     <div className="selectWrapper" >
       <label htmlFor="SelectDestination" className="NavText">{label}</label>

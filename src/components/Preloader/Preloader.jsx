@@ -5,7 +5,6 @@ import './Preloader.css';
 
 const Preloader = () => {
   const isLoading = useSelector(state => state.preloaderVar.isLoading)
-
 if(!isLoading) return null;
 
   return (

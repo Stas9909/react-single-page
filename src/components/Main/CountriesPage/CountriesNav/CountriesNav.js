@@ -1,12 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "./CountriesNav.css";
-import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
-import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
+import { clearSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 
-const CountriesNav = () => {
+const CountriesNav = (props) => {
     const [showCountriesList, setShowList] = useState(false);
     function DeployCountriesList() {
         setShowList(!showCountriesList)
@@ -36,19 +35,9 @@ const CountriesNav = () => {
                         fiveStars: false,
                     }}
 
-                    const validationSchema={Yup.object({
-                        hotelName: Yup.string()
-                            .min(2, 'Must be 2 characters or more')
-                            .matches(/^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)*(?! )$/, 'Only latin letters,numbers and one space in raw are allowed')
-                    })}
-                    onSubmit={(values, { resetForm }) => {
+                    onSubmit={(values) => {
 
-                        const searchResults = hotelsTemplate.filter(hotel =>
-                            hotel.hotelName.toLowerCase().includes(values.hotelName.toLowerCase())
-                        );
-
-                        dispatch(setSearchResultsActionCreator(searchResults))
-                        resetForm();
+                        props.handleFiltersBtn(values)
                     }}
                 >
                     {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting, isValidating, isValid, dirty, setFieldValue }) => (
@@ -61,22 +50,20 @@ const CountriesNav = () => {
                                     className="InputForHotelSearching"
                                     type="text"
                                     placeholder="Знайти готель"
-
                                 >
                                     {({ field }) => (
-                                        <div>
+                                        <div className="divForInputs">
                                             <input
                                                 {...field}
                                                 className="InputForHotelSearching"
                                                 type="text"
                                                 placeholder="Знайти готель"
                                             />
-                                            {values.hotelName.length > 0 && (
-                                                // {showButton && (
-                                                <button className="btnForHotelSearch" type="submit">
-                                                    Найти
-                                                </button>
-                                            )}
+                                            {/* {values.hotelName.length > 0 && ( */}
+                                            <button className="btnForHotelSearch" type="submit">
+                                                Найти
+                                            </button>
+                                            {/* )} */}
                                         </div>
                                     )}
                                 </Field>
@@ -85,19 +72,28 @@ const CountriesNav = () => {
                                 <div className="DivForCountriesList">
                                     <p className="ParForCountryTxt" onClick={DeployCountriesList}>Країна</p>
                                     <div className={showCountriesList ? "showSelectedList" : "hideSelectedList"}>
-                                        <div className="TurkeyHotels">
+                                        <div className="generalClassForHotels turkeyHotels">
                                             <Field type="checkbox" name="turkey" className="chooseMe" id="chooseTurkey" />
-                                            <NavLink to="/countries/turkey" className="LinkForCountry">Туреччина</NavLink>
+                                            <div className="LinkForCountry"
+                                                onClick={() => {
+                                                    dispatch(clearSearchResultsActionCreator());
+                                                }}>Туреччина</div>
                                         </div>
 
-                                        <div className="EgyptHotels">
+                                        <div className="generalClassForHotels egyptHotels">
                                             <Field type="checkbox" name="egypt" className="chooseMe" id="chooseEgypt" />
-                                            <NavLink to="/countries/egypt" className="LinkForCountry">Єгипет</NavLink>
+                                            <div className="LinkForCountry"
+                                                onClick={() => {
+                                                    dispatch(clearSearchResultsActionCreator());
+                                                }}>Єгипет</div>
                                         </div>
 
-                                        <div className="OAEHotels">
+                                        <div className="generalClassForHotels OAEHotels">
                                             <Field type="checkbox" name="OAE" className="chooseMe" id="chooseOAE" />
-                                            <NavLink to="/countries/OAE" className="LinkForCountry">ОАЕ</NavLink>
+                                            <div className="LinkForCountry"
+                                                onClick={() => {
+                                                    dispatch(clearSearchResultsActionCreator());
+                                                }}>ОАЕ</div>
                                         </div>
                                     </div>
                                 </div>
@@ -105,25 +101,25 @@ const CountriesNav = () => {
                                 <div className="DivForCategoriesList">
                                     <p className="ParForCategoryTxt" onClick={DeployCategoriesList} style={{ showCategoriesList: "true" ? "ParForCategoryTxtSelected" : "ParForCategoryTxt" }}>Категорія</p>
                                     <div className={showCategoriesList ? 'showSelectedList' : "hideSelectedList"}>
-                                        <div className="OneStarHtls">
+                                        <div className="generalClassForHotels OneStarHtls">
                                             <Field type="checkbox" name="oneStar" className="chooseMe" id="selectOneStar" />
-                                            <NavLink to="#" className="LinkForCategory">1*</NavLink>
+                                            <div className="LinkForCategory">1*</div>
                                         </div>
-                                        <div className="TwoStarHtls">
+                                        <div className="generalClassForHotels TwoStarHtls">
                                             <Field type="checkbox" name="twoStars" className="chooseMe" id="selectTwoStars" />
-                                            <NavLink to="#" className="LinkForCategory">2*</NavLink>
+                                            <div className="LinkForCategory">2*</div>
                                         </div>
-                                        <div className="ThreeStarHtls">
+                                        <div className="generalClassForHotels ThreeStarHtls">
                                             <Field type="checkbox" name="threeStars" className="chooseMe" id="selectThreeStars" />
-                                            <NavLink to="#" className="LinkForCategory">3*</NavLink>
+                                            <div className="LinkForCategory">3*</div>
                                         </div>
-                                        <div className="FourStarHtls">
+                                        <div className="generalClassForHotels FourStarHtls">
                                             <Field type="checkbox" name="fourStars" className="chooseMe" id="selectFourStars" />
-                                            <NavLink to="#" className="LinkForCategory">4*</NavLink>
+                                            <div className="LinkForCategory">4*</div>
                                         </div>
-                                        <div className="FiveStarHtls">
+                                        <div className="generalClassForHotels FiveStarHtls">
                                             <Field type="checkbox" name="fiveStars" className="chooseMe" id="selectFiveStars" />
-                                            <NavLink to="#" className="LinkForCategory">5*</NavLink>
+                                            <div className="LinkForCategory">5*</div>
                                         </div>
                                     </div>
                                 </div>
