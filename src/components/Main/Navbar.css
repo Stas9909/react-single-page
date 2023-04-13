@@ -98,9 +98,7 @@
   }
 
   .buttonHeightCorrection{
-    /* margin-top: 23px; */
     display: flex;
-    /* position: absolute; */
   }
 
   .NavText{
@@ -135,23 +133,26 @@
     justify-content: space-evenly;
     align-content: space-around;
     flex-wrap: wrap;
-    height: 86%;
+    height: 165px;
   }
 
-  /* .DivForInput{
+  .DivForInput, .buttonHeightCorrection{
     width: 40%;
-  } */
+  }
+
+  .selectWrapper, .SearchingTour{
+    width: 100%;
+  }
 
   .NavText{
     display: none;
   }
 
-  .NavInput{
+  #SelectDuration,
+  #SelectTouristsNumber, 
+  #SelectDestination,
+  #SelectDeparture{
     width: 100%;
-  }
-
-  .SearchingTour{
-    width: 39.8%;
   }
 
   .DivForNavDate{
@@ -170,18 +171,27 @@
     height: 50%;
   }
 
-  .DivForInput{
+  .ContentTab1 {
+    height: auto;
+  }
+
+  .buttonHeightCorrection{
     width: 92%;
   }
 
   .SearchingTour{
+    width: 100%;
+  }
+
+  .DivForInput{
     width: 92%;
+    margin-bottom: 8px;
   }
 }
 
-@media (max-width: 450px){
+@media (max-width: 452px){
   .Navbar {
-    height: 58%;
+    height: 54%;
   }
 }
 
