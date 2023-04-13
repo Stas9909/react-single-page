@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-single-page/static/css/main.efb7aedb.css",
+    "main.css": "/react-single-page/static/css/main.f8f6b215.css",
     "main.js": "/react-single-page/static/js/main.5bf9ed06.js",
     "static/media/Thailand background.jpg": "/react-single-page/static/media/Thailand background.f1d601b728a31bfddf47.jpg",
     "static/media/CxXi4K.jpg": "/react-single-page/static/media/CxXi4K.79f2a999dbd58de42ec3.jpg",
@@ -204,11 +204,11 @@
     "static/media/Turkey_hotel_Karadut_Cave_Hotel_9.jpg": "/react-single-page/static/media/Turkey_hotel_Karadut_Cave_Hotel_9.67129438872095ff50a5.jpg",
     "static/media/girl-avatar6.jpg": "/react-single-page/static/media/girl-avatar6.f8c1f000e3d10f204db5.jpg",
     "index.html": "/react-single-page/index.html",
-    "main.efb7aedb.css.map": "/react-single-page/static/css/main.efb7aedb.css.map",
+    "main.f8f6b215.css.map": "/react-single-page/static/css/main.f8f6b215.css.map",
     "main.5bf9ed06.js.map": "/react-single-page/static/js/main.5bf9ed06.js.map"
   },
   "entrypoints": [
-    "static/css/main.efb7aedb.css",
+    "static/css/main.f8f6b215.css",
     "static/js/main.5bf9ed06.js"
   ]
 }
