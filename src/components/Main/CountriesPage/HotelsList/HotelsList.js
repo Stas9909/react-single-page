@@ -3,7 +3,6 @@ import HotelsCard from "../HotelsTemplateElements/HotelsCard";
 import "./HotelsList.css";
 
 const HotelsList = (props) => {
-
   return (
     <div>
       {props.list.slice(0, props.currentVisibleHotels).map((hotel) => {

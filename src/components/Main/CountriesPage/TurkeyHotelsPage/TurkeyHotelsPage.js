@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./TurkeyHotelsPage.css";
 import { setHotelsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
-// import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 import HotelsTemplateElements from "../HotelsTemplateElements/HotelsList"
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useParams } from "react-router-dom";
@@ -17,7 +16,6 @@ const TurkeyHotelsPage = () => {
 
     const dispatch = useDispatch();
     const hotelsTemplate = useSelector(state => state.countryHotelsSectionVar);
-    // const searchResults = useSelector(state => state.searchHotelResultsVar);
 
     useEffect(() => {
         dispatch(setHotelsActionCreator(countryName))

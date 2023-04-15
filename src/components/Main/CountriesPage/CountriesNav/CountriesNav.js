@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./CountriesNav.css";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, useFormikContext } from "formik";
 import * as Yup from "yup";
 import { clearSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 
@@ -16,8 +17,27 @@ const CountriesNav = (props) => {
         setShowCategoriesList(!showCategoriesList)
     }
 
+    const location = useLocation()
+
+    const retrieveQueryParams = (queryParams) => {
+        if (!queryParams) return {};
+        const query = queryParams.split("?")[1];
+        const valuesObj = query.split("&").reduce((acc, item) => {
+            const [key, value] = item.split("=");
+            acc[key] = value;
+            return acc;
+        }, {});
+        console.log(valuesObj)
+        return valuesObj;
+    }
+
+    const queryParam = retrieveQueryParams(location.search)
+
     const dispatch = useDispatch();
-    const hotelsTemplate = useSelector(state => state.countryHotelsSectionVar);
+
+    useEffect(() => {
+        retrieveQueryParams(location.search);
+    }, [])
 
     return (
         <div className="CountriesNav">
@@ -25,17 +45,16 @@ const CountriesNav = (props) => {
                 <Formik
                     initialValues={{
                         hotelName: '',
-                        turkey: false,
-                        egypt: false,
-                        OAE: false,
-                        oneStar: false,
-                        twoStars: false,
-                        threeStars: false,
-                        fourStars: false,
-                        fiveStars: false,
+                        turkey: queryParam.turkey || false,
+                        egypt: queryParam.egypt || false,
+                        OAE: queryParam.OAE || false,
+                        oneStar: queryParam.oneStar || false,
+                        twoStars: queryParam.twoStars || false,
+                        threeStars: queryParam.threeStars || false,
+                        fourStars: queryParam.fourStars || false,
+                        fiveStars: queryParam.fiveStars || false,
                     }}
-
-                    onSubmit={(values) => {
+                    onSubmit={(values, { resetForm }) => {
 
                         props.handleFiltersBtn(values)
                     }}
@@ -43,7 +62,6 @@ const CountriesNav = (props) => {
                     {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting, isValidating, isValid, dirty, setFieldValue }) => (
                         <Form>
                             <div className="DivForHotelSerching">
-
                                 <Field
                                     id='SearchHotel'
                                     name="hotelName"
@@ -79,7 +97,6 @@ const CountriesNav = (props) => {
                                                     dispatch(clearSearchResultsActionCreator());
                                                 }}>Туреччина</div>
                                         </div>
-
                                         <div className="generalClassForHotels egyptHotels">
                                             <Field type="checkbox" name="egypt" className="chooseMe" id="chooseEgypt" />
                                             <div className="LinkForCountry"
@@ -87,7 +104,6 @@ const CountriesNav = (props) => {
                                                     dispatch(clearSearchResultsActionCreator());
                                                 }}>Єгипет</div>
                                         </div>
-
                                         <div className="generalClassForHotels OAEHotels">
                                             <Field type="checkbox" name="OAE" className="chooseMe" id="chooseOAE" />
                                             <div className="LinkForCountry"
@@ -97,7 +113,6 @@ const CountriesNav = (props) => {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="DivForCategoriesList">
                                     <p className="ParForCategoryTxt" onClick={DeployCategoriesList} style={{ showCategoriesList: "true" ? "ParForCategoryTxtSelected" : "ParForCategoryTxt" }}>Категорія</p>
                                     <div className={showCategoriesList ? 'showSelectedList' : "hideSelectedList"}>

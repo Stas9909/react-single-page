@@ -1,7 +1,6 @@
 import "./EgyptHotelsPage.css";
 import React, { useEffect, useState } from "react";
 import { setHotelsActionCreator } from "../../../../Redux/hotels/CountryHotelsSectionAction";
-import { setSearchResultsActionCreator } from "../../../../Redux/searchHotel/searchHotelResultsAction";
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useParams } from "react-router-dom";
 import HotelsTemplateElements from "../HotelsTemplateElements/HotelsList";

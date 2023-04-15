@@ -5,7 +5,6 @@ export const setHotelsActionCreator = () => (dispatch, getState) => {
 
   axios.get("../../react-single-page/data.json")
     .then(response => {
-      //запис в переменную обращение к св-ву объекта (turkey/egypt)
       const currentCountryHotels = response.data;
       setTimeout(() => {
         dispatch({ type: "SET_HOTELS", hotelsTemplate: currentCountryHotels })

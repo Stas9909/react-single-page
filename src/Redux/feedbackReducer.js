@@ -55,15 +55,11 @@ const feedbackReducer = (dataState = initialState, action) => {
                 FeedbackTemplate: [...dataState.FeedbackTemplate, NewFeedbackTemplate],
                 NewFeedbackText: "" 
             }
-            // dataState.FeedbackTemplate.push(NewFeedbackTemplate);
-            // return dataState;
 
         case UPDATE_NEW_FEEDBACK_TEXT:
             return {
                 ...dataState, NewFeedbackText: action.newText//action.payload
             };
-            // dataState.NewFeedbackText = action.newText;
-            // return dataState;
 
         default:
             return dataState;

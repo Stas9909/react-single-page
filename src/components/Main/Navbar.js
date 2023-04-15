@@ -18,7 +18,7 @@ const Navbar = () => {
   
   return (
     <nav className="Navbar" 
-    onClick={(e) => {!e.target.classList.contains('selectOptionsWrapper') && hideSelectionHandler() }}
+    onClick={(e) => {!e.target.closest('.selectOptionsWrapper') && hideSelectionHandler()}}
     >
 
       <Formik
@@ -53,9 +53,7 @@ const Navbar = () => {
                 <button className={toggleState === 1 ? "TabActive" : "Tab"} onClick={() => toggleTab(1)}>тури online</button>
                 <button className={toggleState === 2 ? "TabActive" : "Tab"} onClick={() => toggleTab(2)}>гарячі тури</button>
               </div>
-
               <div className={toggleState === 1 ? "ContentTab1" : "ContentTab2"}>
-
                 <div className="DivForInput">
                   <NavbarCustomSelect label="Куди" setOptionValue={(value) => setFieldValue("destination", value)}
                     optionList={[{
@@ -71,7 +69,6 @@ const Navbar = () => {
                       optgroup: "Домінікана", id: 4, options: [{ name: 'Всі курорти', value: 'every Dominicans resort', id: 'dominicans-all' }, { name: 'Пунта Кана', value: 'Punta Cana', id: 'dominicans-punta-cana' }, { name: 'Санта Домінго', value: 'Santa Domingo', id: 'dominicans-santa-domingo' }, { name: 'Самана', value: 'Samana', id: 'dominicans-samana' }, { name: 'Ла Романа', value: 'La Romana', id: 'dominicans-la-romana' }, { name: 'Баваро', value: 'Bavaro', id: 'dominicans-bavaro' }]
                     }]}
                   />
-
                 </div>
                 <div className="DivForInput">
                   <label htmlFor="SelectDeparture" className="NavText">Звідки</label>
@@ -90,10 +87,8 @@ const Navbar = () => {
                     <Field className="NavDate" id="From" name="dateFrom" type="date" />
                     <Field className="NavDate" id="To" name="dateTo" type="date" />
                   </div>
-
                   <ErrorMessage className='errorForSearchPanel' name='dateFrom' component='div' />
                   <ErrorMessage className='errorForSearchPanel' id='MoveToTheRight' name='dateTo' component='div' />
-
                 </div>
                 <div className="DivForInput">
                   <label htmlFor="SelectDuration" className="NavText">Тривалість</label>
@@ -108,11 +103,9 @@ const Navbar = () => {
                   <Field className="NavInput" id="SelectTouristsNumber" name="quantity" />
                   <ErrorMessage className='errorForSearchPanel' name='quantity' component='div' />
                 </div>
-
                 <div className="buttonHeightCorrection">
                   <button className="SearchingTour" type="submit">знайти тури</button>
                 </div>
-
               </div>
               <div className={toggleState === 2 ? "ContentTab1" : "ContentTab2"}>
                 <p>CBA</p>

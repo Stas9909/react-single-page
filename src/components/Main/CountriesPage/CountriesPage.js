@@ -83,7 +83,6 @@ const CountriesPage = () => {
                 <div className="TurkeyHotelsSection">
                     <div className="TurkeyNavWrap">
                         {hotelsListForRender.length > 0 ?  <HotelsList currentVisibleHotels={currentVisibleHotels} list={hotelsListForRender} /> : <p>Found nothing</p> }
-
                         <div className="divForInput">
                             <input className={currentVisibleHotels >= hotelsListForRender.length ? 'hideBtn' : "InputForMoreProp"} onClick={addMoreHotels} type="button" value="показати ще" />
                         </div>

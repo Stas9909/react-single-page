@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./NavbarCustomSelect.css";
 
 const NavbarCustomSelect = (props) => {
@@ -17,10 +17,15 @@ const NavbarCustomSelect = (props) => {
     setOptionValue(option.value)
   }
 
-  // onClick={(e) => { openHandler()}}
+  const [hideSelection, setHideSelection] = useState(false)
+  const hideSelectionHandler = () => {
+    setHideSelection(!hideSelection)
+  }
+
+  let closeSelect =  useRef(null);  
 
   return (
-    <div className="selectWrapper" >
+    <div className="selectWrapper">
       <label htmlFor="SelectDestination" className="NavText">{label}</label>
       <button type="button" onClick={openHandler} className="NavInput" id="SelectDestination">
         <div className="optionsContainer">
@@ -29,7 +34,7 @@ const NavbarCustomSelect = (props) => {
       </button>
 
       {showDropdown && (
-        <div className="selectOptionsWrapper">
+        <div className="selectOptionsWrapper" ref={closeSelect}>
           {optionList.map((optgroupObj) => (
             <optgroup className="optgroup selectOption" label={optgroupObj.optgroup} key={optgroupObj.id}>
               {optgroupObj.options.map((optionObj) => (

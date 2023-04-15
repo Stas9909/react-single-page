@@ -12,7 +12,6 @@ const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
   function addStyle() {
     setShowPopup(!showPopup)
-    
   }
 
   const [errorMessage, setErrorMessage] = useState({});
